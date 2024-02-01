@@ -1,0 +1,156 @@
+import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:get/get.dart';
+import 'package:kolaka/core/controllers/general_controller.dart';
+import 'package:kolaka/core/controllers/gps_controller.dart';
+import 'package:kolaka/flutter_flow/flutter_flow_google_map.dart';
+import 'package:location/location.dart';
+
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'package:styled_divider/styled_divider.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'tracking_food_model.dart';
+export 'tracking_food_model.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:http/http.dart' as http;
+
+class TrackingFoodWidget extends StatelessWidget {
+  final dynamic detailData;
+  final dynamic dataDetail;
+
+  TrackingFoodWidget({
+    this.detailData,
+    this.dataDetail,
+  }) {
+    getPolyPoints();
+    // getCurrentLocation();
+  }
+
+  final Completer<GoogleMapController> _controller = Completer();
+  static LatLng sourceLocation = LatLng(-6.2930572, 106.9783686);
+  static LatLng destination = LatLng(-6.3038828, 106.9711916);
+
+  List<LatLng> polylineCoordinates = [];
+  LocationData? currentLocation;
+
+  BitmapDescriptor sourceIcon = BitmapDescriptor.defaultMarker;
+  BitmapDescriptor destinationIcon = BitmapDescriptor.defaultMarker;
+  // BitmapDescriptor currentLocationIcon = BitmapDescriptor.defaultMarker;
+
+  void getCurrentLocation() async {
+    Location location = Location();
+
+    
+    location.getLocation().then(
+      (location) {
+        currentLocation = location;
+      },
+    );
+
+    GoogleMapController googleMapController = await _controller.future;
+
+    location.onLocationChanged.listen((newLoc) {
+      currentLocation = newLoc;
+
+      googleMapController.animateCamera(
+        CameraUpdate.newCameraPosition(
+          CameraPosition(
+            zoom: 13.5,
+            target: LatLng(
+              newLoc.latitude!,
+              newLoc.longitude!,
+            ),
+          ),
+        ),
+      );
+    });
+  }
+
+  void getPolyPoints() async {
+    PolylinePoints polylinePoints = PolylinePoints();
+
+    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+      'AIzaSyDcdaUEAvzRcbpyti4yElPWxKO76NoGByI',
+      PointLatLng(sourceLocation.latitude, sourceLocation.longitude),
+      PointLatLng(destination.latitude, destination.longitude),
+    );
+
+    if (result.points.isNotEmpty) {
+      result.points.forEach(
+        (PointLatLng point) => polylineCoordinates.add(
+          LatLng(point.latitude, point.longitude),
+        ),
+      );
+    }
+  }
+
+  void setCustomMarkerIcon(){
+    BitmapDescriptor.fromAssetImage(
+      ImageConfiguration.empty, "assets/images/marker/pin_source.png")
+      .then((icon) => sourceIcon = icon);
+    BitmapDescriptor.fromAssetImage(
+      ImageConfiguration.empty, "assets/images/marker/pin_destination.png")
+      .then((icon) => destinationIcon = icon);
+    // BitmapDescriptor.fromAssetImage(
+    //   ImageConfiguration.empty, "assets/images/marker/pin_current.png")
+    //   .then((icon) => currentLocationIcon = icon);
+    
+    setCustomMarkerIcon();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print(dataDetail);
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Tracking Map'),
+        ),
+        // body: currentLocation == null
+        //     ? Center(child: Text('Loading...'))
+        //     : 
+            body: GoogleMap(
+                initialCameraPosition: CameraPosition(
+                  // target: LatLng(
+                  //     currentLocation!.latitude!,
+                  //     currentLocation!
+                  //         .longitude!), // Bisa diubah sesuai kebutuhan
+                  target: sourceLocation,
+                  zoom: 14.5,
+                ),
+                polylines: {
+                  Polyline(
+                    polylineId: PolylineId("route"),
+                    points: polylineCoordinates,
+                    color: const Color.fromARGB(255, 250, 144, 137),
+                    width: 6,
+                  ),
+                },
+                markers: {
+                  // Marker(
+                  //     markerId: MarkerId("currentLocation"),
+                  //     icon: currentLocationIcon,
+                  //     position: LatLng(currentLocation!.latitude!,
+                  //         currentLocation!.longitude!)),
+                  Marker(
+                      markerId: MarkerId("source"), 
+                      icon: sourceIcon,
+                      position: sourceLocation),
+                  Marker(
+                      markerId: MarkerId("destination"),
+                      icon: destinationIcon,
+                      position: destination),
+                },
+                // onMapCreated: (mapController) {
+                //   _controller.complete(mapController);
+                // },
+              ),
+      ),
+    );
+  }
+}
