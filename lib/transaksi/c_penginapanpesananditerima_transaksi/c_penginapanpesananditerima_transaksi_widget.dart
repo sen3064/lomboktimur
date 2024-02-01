@@ -1,15 +1,15 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:kolaka/backend/api_requests/api_calls.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/core/services/api_client.dart';
-import 'package:kolaka/home/chat/chat_widget.dart';
-import 'package:kolaka/main.dart';
-import 'package:kolaka/transaksi/halamanstatus_message/halamanstatus_cancel_widget.dart';
-import 'package:kolaka/transaksi/halamanstatus_message/halamanstatus_message_widget.dart';
-import 'package:kolaka/umkm/tracking_food_widget.dart';
-import 'package:kolaka/umkm/tracking_widget.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/core/services/api_client.dart';
+import 'package:kelotimaja/home/chat/chat_widget.dart';
+import 'package:kelotimaja/main.dart';
+import 'package:kelotimaja/transaksi/halamanstatus_message/halamanstatus_cancel_widget.dart';
+import 'package:kelotimaja/transaksi/halamanstatus_message/halamanstatus_message_widget.dart';
+import 'package:kelotimaja/umkm/tracking_food_widget.dart';
+import 'package:kelotimaja/umkm/tracking_widget.dart';
 
 import '/components/varian_umkm_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -1873,7 +1873,8 @@ class _CPenginapanpesananditerimaTransaksiWidgetState
                                                               widget.detailData,
                                                               r'''$.object_model''') ==
                                                           'food-beverage')) {
-                                                            print('ini data detail: ${dataDetail['address2']}');
+                                                    print(
+                                                        'ini data detail: ${dataDetail['address2']}');
                                                     // Get.to(() =>
                                                     //     TrackingFoodWidget(
                                                     //         detailData: widget
@@ -1882,20 +1883,26 @@ class _CPenginapanpesananditerimaTransaksiWidgetState
                                                     //             dataDetail,
                                                     //             addressLatlng: dataDetail['address2']));
                                                     List destCoor =
-                                                    dataDetail['address2'].split(',');
-                                                double latitude =
-                                                    double.parse(destCoor[0]);
-                                                double longitude =
-                                                    double.parse(destCoor[1]);
-                                                Get.to(
-                                                    () => TrackingFoodWidget(
-                                                        booking: widget.detailData),
-                                                    arguments: {
-                                                      'destination': {
-                                                        'latitude': latitude,
-                                                        'longitude': longitude
-                                                      }
-                                       });
+                                                        dataDetail['address2']
+                                                            .split(',');
+                                                    double latitude =
+                                                        double.parse(
+                                                            destCoor[0]);
+                                                    double longitude =
+                                                        double.parse(
+                                                            destCoor[1]);
+                                                    Get.to(
+                                                        () => TrackingFoodWidget(
+                                                            booking: widget
+                                                                .detailData),
+                                                        arguments: {
+                                                          'destination': {
+                                                            'latitude':
+                                                                latitude,
+                                                            'longitude':
+                                                                longitude
+                                                          }
+                                                        });
                                                   } else {
                                                     print('object');
                                                   }
@@ -1967,7 +1974,7 @@ class _CPenginapanpesananditerimaTransaksiWidgetState
                           padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                           child: BarcodeWidget(
                             data:
-                                '${widget.detailData['code']},https://booking-api.kolaka.kabtour.com/v2/booking/,update,finish',
+                                '${widget.detailData['code']},https://booking-api.kelotimaja.kabtour.com/v2/booking/,update,finish',
                             barcode: Barcode.qrCode(
                                 errorCorrectLevel:
                                     BarcodeQRCorrectionLevel.high),
@@ -2022,7 +2029,7 @@ class _CPenginapanpesananditerimaTransaksiWidgetState
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 0.0),
                           child: Text(
-                            'Note : Untuk menyelesaikan transaksi silahkan scan  Barcode atau masukan Kode Transaksi di aplikasi mitra Kolaka',
+                            'Note : Untuk menyelesaikan transaksi silahkan scan  Barcode atau masukan Kode Transaksi di aplikasi mitra kelotimaja',
                             textAlign: TextAlign.start,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -2049,7 +2056,10 @@ class _CPenginapanpesananditerimaTransaksiWidgetState
                                       10.0, 10.0, 10.0, 10.0),
                                   child: FFButtonWidget(
                                     onPressed: () {
-                                      String lastName = widget.detailData['vendor']['last_name'] ?? '';
+                                      String lastName =
+                                          widget.detailData['vendor']
+                                                  ['last_name'] ??
+                                              '';
                                       Get.off(() => const ChatWidget(),
                                           arguments: {
                                             'to_username':
@@ -2094,58 +2104,61 @@ class _CPenginapanpesananditerimaTransaksiWidgetState
                                   widget.detailData['status'] !=
                                       'minta_batal' &&
                                   widget.detailData['status'] != 'Dibatalkan')
-                                  if(widget.detailData['object_model'] !=
-                                              'food-beverages' ||
-                                          widget.detailData['object_model']  !=
-                                              'food-beverage')
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        var res = await updateTransactionStatus(
-                                            'minta_batal',
-                                            widget.detailData['code']);
-                                        Get.to(() =>
-                                            const HalamanstatusCancelWidget());
-                                      },
-                                      text: 'Batalkan Pesanan',
-                                      options: FFButtonOptions(
-                                        width: double.infinity,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily,
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmallFamily),
-                                            ),
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
+                                if (widget.detailData['object_model'] !=
+                                        'food-beverages' ||
+                                    widget.detailData['object_model'] !=
+                                        'food-beverage')
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          var res =
+                                              await updateTransactionStatus(
+                                                  'minta_batal',
+                                                  widget.detailData['code']);
+                                          Get.to(() =>
+                                              const HalamanstatusCancelWidget());
+                                        },
+                                        text: 'Batalkan Pesanan',
+                                        options: FFButtonOptions(
+                                          width: double.infinity,
+                                          height: 40.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallFamily),
+                                              ),
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(21.0),
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(21.0),
                                       ),
                                     ),
                                   ),
-                                ),
                               if (widget.detailData['status'] == 'minta_batal')
                                 Expanded(
                                   child: Padding(
@@ -2520,7 +2533,7 @@ class _CPenginapanpesananditerimaTransaksiWidgetState
     print('$code - $status');
     // apiClient.setSubdomain('booking-api');
     var res = await apiClient.post(
-        'https://booking-api.kolaka.kabtour.com/v2/my-transactions/update/$code?_method=put',
+        'https://booking-api.kelotimaja.kabtour.com/v2/my-transactions/update/$code?_method=put',
         data: {'status': status});
     CommonHelper.logPrint(res);
   }

@@ -1,6 +1,6 @@
-import 'package:kolaka/custom_code/widgets/sliding_up_panel_example.dart';
-import 'package:kolaka/index.dart';
-import 'package:kolaka/main.dart';
+import 'package:kelotimaja/custom_code/widgets/sliding_up_panel_example.dart';
+import 'package:kelotimaja/index.dart';
+import 'package:kelotimaja/main.dart';
 
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -14,9 +14,11 @@ import 'bayar_u_m_k_m_model.dart';
 export 'bayar_u_m_k_m_model.dart';
 
 class BayarUMKMWidget extends StatefulWidget {
-  const BayarUMKMWidget({Key? key, required this.bookingCode,required this.items}) : super(key: key);
-final String bookingCode;
-final Map<String, dynamic> items;
+  const BayarUMKMWidget(
+      {Key? key, required this.bookingCode, required this.items})
+      : super(key: key);
+  final String bookingCode;
+  final Map<String, dynamic> items;
 
   @override
   _BayarUMKMWidgetState createState() => _BayarUMKMWidgetState();

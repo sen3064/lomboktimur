@@ -1,4 +1,4 @@
-import 'package:kolaka/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
 
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:kolaka/backend/api_requests/api_calls.dart';
-import 'package:kolaka/index.dart';
-import 'package:kolaka/search_filter/search_result/search_list_tour_widget.dart';
-import 'package:kolaka/search_filter/search_result/search_result_widget.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/index.dart';
+import 'package:kelotimaja/search_filter/search_result/search_list_tour_widget.dart';
+import 'package:kelotimaja/search_filter/search_result/search_result_widget.dart';
 
 import '../../main.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -173,7 +173,8 @@ class _SearchProdukWidgetState extends State<SearchProdukWidget> {
                                         keyData: umkmData,
                                       ));
 
-                                  _model.setLoading(false);}
+                                  _model.setLoading(false);
+                                }
                               } catch (e) {
                                 // Menyembunyikan indikator loading setelah proses pencarian selesai, termasuk jika terjadi kesalahan
                                 _model.setLoading(false);

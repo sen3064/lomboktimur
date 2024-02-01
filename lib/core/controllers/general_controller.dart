@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-// import 'package:kolaka/components/general_info_screen.dart';
-import 'package:kolaka/core/constants/storage.dart';
-import 'package:kolaka/core/constants/subdomain.dart';
-import 'package:kolaka/core/controllers/gps_controller.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/core/helpers/currency_format.dart';
-import 'package:kolaka/core/services/api_client.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_util.dart';
-import 'package:kolaka/flutter_flow/form_field_controller.dart';
+// import 'package:kelotimaja/components/general_info_screen.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
+import 'package:kelotimaja/core/constants/subdomain.dart';
+import 'package:kelotimaja/core/controllers/gps_controller.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/core/helpers/currency_format.dart';
+import 'package:kelotimaja/core/services/api_client.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_util.dart';
+import 'package:kelotimaja/flutter_flow/form_field_controller.dart';
 
 class GeneralController extends GetxController {
   GPSController gpsC = Get.isRegistered<GPSController>()

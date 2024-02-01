@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:kolaka/backend/api_requests/api_calls.dart';
-import 'package:kolaka/components/ubah_data_tiket_widget.dart';
-import 'package:kolaka/main.dart';
-import 'package:kolaka/search_filter/search.dart';
-import 'package:kolaka/tiket_wisata/beli_tiket_wisata/beli_tiket_wisata_widget.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/components/ubah_data_tiket_widget.dart';
+import 'package:kelotimaja/main.dart';
+import 'package:kelotimaja/search_filter/search.dart';
+import 'package:kelotimaja/tiket_wisata/beli_tiket_wisata/beli_tiket_wisata_widget.dart';
 
 import '../../theme.dart';
 import '/tiket_wisata/detail_wisata/detail_wisata_widget.dart';
@@ -354,7 +354,6 @@ class _ListTiketWisataWidgetState extends State<ListTiketWisataWidget> {
                                                       children: [
                                                         Expanded(
                                                           child: Text(
-                                                            
                                                             getJsonField(
                                                               filteredDataTiketItem,
                                                               r'''$.location.name''',

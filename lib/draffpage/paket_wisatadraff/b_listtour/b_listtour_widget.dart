@@ -475,7 +475,7 @@ class _BListtourWidgetState extends State<BListtourWidget> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Explore Kolaka',
+                                            'Explore kelotimaja',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -815,7 +815,7 @@ class _BListtourWidgetState extends State<BListtourWidget> {
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Berpetualang mengarungi Taman Nasional Kolaka dengan kapal semi-phinisi yang nyaman. Snorkeling, diving, trekking dan safari semua dalam 1 paket. Chef kami juga akan membuatkan makanan laut segar dengan mempertimbangkan alergi yang mungkin anda miliki.',
+                                                      'Berpetualang mengarungi Taman Nasional kelotimaja dengan kapal semi-phinisi yang nyaman. Snorkeling, diving, trekking dan safari semua dalam 1 paket. Chef kami juga akan membuatkan makanan laut segar dengan mempertimbangkan alergi yang mungkin anda miliki.',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1388,7 +1388,7 @@ class _BListtourWidgetState extends State<BListtourWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 0.0, 0.0),
                                               child: Text(
-                                                'Kecamatan Kolaka',
+                                                'Kecamatan kelotimaja',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .labelSmall
@@ -1533,7 +1533,7 @@ class _BListtourWidgetState extends State<BListtourWidget> {
                                                     .fromSTEB(
                                                         5.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Berpetualang mengarungi Taman Nasional Kolaka dengan kapal semi-phinisi yang nyaman. Snorkeling, diving, trekking dan safari semua dalam 1 paket. Chef kami juga akan membuatkan makanan laut segar dengan mempertimbangkan alergi yang mungkin anda miliki.',
+                                                  'Berpetualang mengarungi Taman Nasional kelotimaja dengan kapal semi-phinisi yang nyaman. Snorkeling, diving, trekking dan safari semua dalam 1 paket. Chef kami juga akan membuatkan makanan laut segar dengan mempertimbangkan alergi yang mungkin anda miliki.',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelSmall

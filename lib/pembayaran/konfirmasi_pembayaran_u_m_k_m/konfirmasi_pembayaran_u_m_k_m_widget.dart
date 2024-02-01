@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:kolaka/components/webview_screen.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/makanan/services/product_service.dart';
+import 'package:kelotimaja/components/webview_screen.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/makanan/services/product_service.dart';
 
 import '/components/varian_umkm_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

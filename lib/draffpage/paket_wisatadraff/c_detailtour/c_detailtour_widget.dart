@@ -242,7 +242,7 @@ class _CDetailtourWidgetState extends State<CDetailtourWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Explore Kolaka',
+                            'Explore kelotimaja',
                             style: FlutterFlowTheme.of(context)
                                 .bodyLarge
                                 .override(
@@ -2152,7 +2152,7 @@ class _CDetailtourWidgetState extends State<CDetailtourWidget> {
                                   shape: BoxShape.circle,
                                 ),
                                 child: Image.network(
-                                  'https://cdn.kolaka.kabtour.com/storage/user/avatar.png',
+                                  'https://cdn.kelotimaja.kabtour.com/storage/user/avatar.png',
                                   fit: BoxFit.cover,
                                 ),
                               ),

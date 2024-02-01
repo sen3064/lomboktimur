@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:kolaka/backend/api_requests/api_calls.dart';
-import 'package:kolaka/transportasi/list_pencarian_kendaraan/list_pencarian_kendaraan_widget.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/transportasi/list_pencarian_kendaraan/list_pencarian_kendaraan_widget.dart';
 
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -112,34 +112,37 @@ class _CariKendaraanWidgetState extends State<CariKendaraanWidget> {
                                 () => setState(() {}),
                               ),
                               onFieldSubmitted: (_) async {
-                              try {
-                                // Menampilkan indikator loading
-                                _model.setLoading(true);
+                                try {
+                                  // Menampilkan indikator loading
+                                  _model.setLoading(true);
 
-                                _model.apiResultijas =
-                                    await UmkmGroup.searchProdukCall.call(
-                                  keyword: _model.textController.text,
-                                );
+                                  _model.apiResultijas =
+                                      await UmkmGroup.searchProdukCall.call(
+                                    keyword: _model.textController.text,
+                                  );
 
-                                if ((_model.apiResultijas?.succeeded ?? true)) {
-                                  final transportasiData = getJsonField(
-                                          _model.apiResultijas?.jsonBody,
-                                          r'$.data.transportasi') ??
-                                      [];
-                                  // Lanjutkan dengan logika setelah mendapatkan hasil pencarian
+                                  if ((_model.apiResultijas?.succeeded ??
+                                      true)) {
+                                    final transportasiData = getJsonField(
+                                            _model.apiResultijas?.jsonBody,
+                                            r'$.data.transportasi') ??
+                                        [];
+                                    // Lanjutkan dengan logika setelah mendapatkan hasil pencarian
 
-                                  Get.to(() => ListPencarianKendaraanWidget(
-                                        searchData: _model.textController.text,
-                                        keyData: transportasiData,
-                                      ));
+                                    Get.to(() => ListPencarianKendaraanWidget(
+                                          searchData:
+                                              _model.textController.text,
+                                          keyData: transportasiData,
+                                        ));
 
-                                  _model.setLoading(false);}
-                              } catch (e) {
-                                print('failed');
-                                // Menyembunyikan indikator loading setelah proses pencarian selesai, termasuk jika terjadi kesalahan
-                                _model.setLoading(false);
-                              }
-                            },
+                                    _model.setLoading(false);
+                                  }
+                                } catch (e) {
+                                  print('failed');
+                                  // Menyembunyikan indikator loading setelah proses pencarian selesai, termasuk jika terjadi kesalahan
+                                  _model.setLoading(false);
+                                }
+                              },
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(

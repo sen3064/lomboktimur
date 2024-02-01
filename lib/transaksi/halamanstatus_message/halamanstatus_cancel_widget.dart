@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:kolaka/core/constants/constant.dart';
+import 'package:kelotimaja/core/constants/constant.dart';
 
-import 'package:kolaka/main.dart';
+import 'package:kelotimaja/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kolaka/backend/backend.dart';
+import 'package:kelotimaja/backend/backend.dart';
 import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_util.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_util.dart';
 import 'dart:convert';
 
 import 'flutter_flow/request_manager.dart';

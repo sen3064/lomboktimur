@@ -4,8 +4,8 @@ import 'package:dio/dio.dart' as dio;
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:kolaka/core/constants/storage.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_util.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_util.dart';
 import 'package:path/path.dart';
 
 class ApiClient extends GetxService {
@@ -27,10 +27,10 @@ class ApiClient extends GetxService {
           // Do something with response error
           if (!await checkInternetConnectivity()) {
             Get.defaultDialog(
-              title: 'No Internet Connection',
-              middleText: 'You are offline, Please check Your internet connection',
-              onConfirm: () => Get.back()
-            );
+                title: 'No Internet Connection',
+                middleText:
+                    'You are offline, Please check Your internet connection',
+                onConfirm: () => Get.back());
           }
           if (dioError.response?.statusCode == 401) {
             print('authentication error');
@@ -54,7 +54,7 @@ class ApiClient extends GetxService {
   }
 
   String _getBaseUrl(String subdomain) {
-    return 'https://$subdomain.kolaka.kabtour.com/v2';
+    return 'https://$subdomain.kelotimaja.kabtour.com/v2';
   }
 
   Future<bool> checkInternetConnectivity() async {

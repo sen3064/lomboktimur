@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:kolaka/backend/api_requests/api_calls.dart';
-import 'package:kolaka/makanan/list_pencarian_makanan/list_pencarian_makanan_widget.dart';
-import 'package:kolaka/transportasi/list_pencarian_kendaraan/list_pencarian_kendaraan_widget.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/makanan/list_pencarian_makanan/list_pencarian_makanan_widget.dart';
+import 'package:kelotimaja/transportasi/list_pencarian_kendaraan/list_pencarian_kendaraan_widget.dart';
 
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -128,11 +128,10 @@ class _CariMakananWidgetState extends State<CariMakananWidget> {
                                               ?['food-beverages']
                                           as List<dynamic> ??
                                       [];
-                                  
+
                                   if ((_model.apiResultSdjq?.succeeded ??
                                       true)) {
-                                    final makananData = foodBeverages ??
-                                        [];
+                                    final makananData = foodBeverages ?? [];
                                     // Lanjutkan dengan logika setelah mendapatkan hasil pencarian
 
                                     Get.to(() => ListPencarianMakananWidget(

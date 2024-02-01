@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:kolaka/auth/base_auth_user_provider.dart';
-import 'package:kolaka/core/constants/storage.dart';
-import 'package:kolaka/core/helpers/auth_helper.dart';
+import 'package:kelotimaja/auth/base_auth_user_provider.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
+import 'package:kelotimaja/core/helpers/auth_helper.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

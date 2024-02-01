@@ -297,7 +297,7 @@ class _SkEventWidgetState extends State<SkEventWidget> {
                                           children: [
                                             TextSpan(
                                               text:
-                                                  'Penjualan tiket sewaktu-waktu dapat dihentikan oleh Kolaka sesuai dengan kebijakan penyedia event atau Kolaka',
+                                                  'Penjualan tiket sewaktu-waktu dapat dihentikan oleh kelotimaja sesuai dengan kebijakan penyedia event atau kelotimaja',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

@@ -1,6 +1,6 @@
-import 'package:kolaka/Styles/button.dart';
+import 'package:kelotimaja/Styles/button.dart';
 import 'package:flutter/material.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/theme.dart';
 
 String chatApiSecretKey = "9crn15N3HsV";
 

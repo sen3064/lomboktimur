@@ -1,7 +1,7 @@
-import 'package:kolaka/flutter_flow/flutter_flow_widgets.dart';
-import 'package:kolaka/main.dart';
-import 'package:kolaka/search_filter/pilih_lokasi/pilih_lokasi_widget.dart';
-import 'package:kolaka/search_filter/search_produk/search_produk_widget.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_widgets.dart';
+import 'package:kelotimaja/main.dart';
+import 'package:kelotimaja/search_filter/pilih_lokasi/pilih_lokasi_widget.dart';
+import 'package:kelotimaja/search_filter/search_produk/search_produk_widget.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

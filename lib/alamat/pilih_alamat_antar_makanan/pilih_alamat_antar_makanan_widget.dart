@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:kolaka/components/add_new_addess.dart';
-import 'package:kolaka/core/controllers/gps_controller.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_google_map.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_icon_button.dart';
+import 'package:kelotimaja/components/add_new_addess.dart';
+import 'package:kelotimaja/core/controllers/gps_controller.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_google_map.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_icon_button.dart';
 
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -39,7 +39,8 @@ class _PilihAlamatAntarMakananWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => PilihAlamatAntarMakananModel());
-    _model.textController1 ??= TextEditingController( text: FFAppState().address);
+    _model.textController1 ??=
+        TextEditingController(text: FFAppState().address);
     _model.textFieldFocusNode1 ??= FocusNode();
     _latitude = gpsController.latitude.value;
     _longitude = gpsController.longitude.value;
@@ -332,7 +333,8 @@ class _PilihAlamatAntarMakananWidgetState
                                 Get.defaultDialog(
                                     title: "Sukses",
                                     middleText: "Detail alamat sudah di atur",
-                                    onConfirm: () => Get.to(() => HomeMakananWidget()));
+                                    onConfirm: () =>
+                                        Get.to(() => HomeMakananWidget()));
                               }
                             },
                             text: '',

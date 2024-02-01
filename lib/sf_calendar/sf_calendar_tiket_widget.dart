@@ -1,5 +1,5 @@
-import 'package:kolaka/components/ubah_data_tiket_widget.dart';
-import 'package:kolaka/custom_code/widgets/sf_calendar_tiket.dart';
+import 'package:kelotimaja/components/ubah_data_tiket_widget.dart';
+import 'package:kelotimaja/custom_code/widgets/sf_calendar_tiket.dart';
 import '../custom_code/widgets/sf_calendar_tiket.dart';
 import '/components/ubah_data_booking_backup_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

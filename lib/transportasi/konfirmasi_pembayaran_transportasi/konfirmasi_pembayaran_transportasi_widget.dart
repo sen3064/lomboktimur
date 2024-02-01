@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:kolaka/components/webview_screen.dart';
+import 'package:kelotimaja/components/webview_screen.dart';
 
 import '../../backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

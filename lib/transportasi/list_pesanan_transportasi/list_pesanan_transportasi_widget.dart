@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:kolaka/index.dart';
+import 'package:kelotimaja/index.dart';
 // import 'package:mykomodov2/pembayaran/konfirmasi_pembayaran_homestay/konfirmasi_pembayaran_homestay_model.dart';
 
 import '../../backend/api_requests/api_calls.dart';
@@ -51,19 +51,22 @@ class _ListPesananTransportasiWidgetState
 
     _model.textController1 ??= TextEditingController(
         text: getJsonField(
-      FFAppState().userData,
-      r'''$.name''',
-    )?.toString() ?? '');
+              FFAppState().userData,
+              r'''$.name''',
+            )?.toString() ??
+            '');
     _model.textController2 ??= TextEditingController(
         text: getJsonField(
-      FFAppState().userData,
-      r'''$.email''',
-    )?.toString() ?? '');
+              FFAppState().userData,
+              r'''$.email''',
+            )?.toString() ??
+            '');
     _model.textController3 ??= TextEditingController(
         text: getJsonField(
-      FFAppState().userData,
-      r'''$.phone''',
-    )?.toString() ?? '');
+              FFAppState().userData,
+              r'''$.phone''',
+            )?.toString() ??
+            '');
   }
 
   @override
@@ -1338,52 +1341,50 @@ class _ListPesananTransportasiWidgetState
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
-                            
-                              _model.rentBooking =
-                                  await BookingHandlerGroup.rentCall.call(
-                                accessToken: FFAppState().accessToken,
-                                // locationId: getJsonField(
-                                //   widget.tourData,
-                                //   r'''$.id''',
-                                // ).toString(),
-                                // dataTourJson: widget.tourData,
-                                carId:
-                                    getJsonField(widget.rentData, r'''$.id''')
-                                        .toString(),
-                                price: getJsonField(
-                                    widget.rentData, r'''$.prices'''),
+                            _model.rentBooking =
+                                await BookingHandlerGroup.rentCall.call(
+                              accessToken: FFAppState().accessToken,
+                              // locationId: getJsonField(
+                              //   widget.tourData,
+                              //   r'''$.id''',
+                              // ).toString(),
+                              // dataTourJson: widget.tourData,
+                              carId: getJsonField(widget.rentData, r'''$.id''')
+                                  .toString(),
+                              price: getJsonField(
+                                  widget.rentData, r'''$.prices'''),
 
-                                startDate: valueOrDefault<String>(
-                                  functions.formatDate(dateTimeFormat(
-                                      'd/M/y', FFAppState().startDate)),
-                                  'null',
-                                ),
-                                endDate: valueOrDefault<String>(
-                                  functions.formatDate(dateTimeFormat(
-                                      'd/M/y', FFAppState().endDate)),
-                                  'null',
-                                ),
-                                // totalDays:
-                                //     _model.countControllerValue!.toString(),
-                                // totalPrice: _model.countControllerValue! *
-                                //     getJsonField(
-                                //         widget.tourData, r'''$.price''')),
-                                totalPrice: totalHarga,
-                              );
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      KonfirmasiPembayaranTransportasiWidget(
-                                          rentData: widget.rentData,
-                                          day: jmlHari,
-                                          driver: widget.driver,
-                                          totalHarga: totalHarga,
-                                          rentBooking:
-                                              (_model.rentBooking?.jsonBody ??
-                                                  '')),
-                                ),
-                              );
+                              startDate: valueOrDefault<String>(
+                                functions.formatDate(dateTimeFormat(
+                                    'd/M/y', FFAppState().startDate)),
+                                'null',
+                              ),
+                              endDate: valueOrDefault<String>(
+                                functions.formatDate(dateTimeFormat(
+                                    'd/M/y', FFAppState().endDate)),
+                                'null',
+                              ),
+                              // totalDays:
+                              //     _model.countControllerValue!.toString(),
+                              // totalPrice: _model.countControllerValue! *
+                              //     getJsonField(
+                              //         widget.tourData, r'''$.price''')),
+                              totalPrice: totalHarga,
+                            );
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    KonfirmasiPembayaranTransportasiWidget(
+                                        rentData: widget.rentData,
+                                        day: jmlHari,
+                                        driver: widget.driver,
+                                        totalHarga: totalHarga,
+                                        rentBooking:
+                                            (_model.rentBooking?.jsonBody ??
+                                                '')),
+                              ),
+                            );
                           },
                           text: 'Lanjut',
                           options: FFButtonOptions(
@@ -1416,56 +1417,54 @@ class _ListPesananTransportasiWidgetState
                     ),
                   ),
                 ),
-                if (FFAppState().address == null || FFAppState().address == '')
-                Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        FFButtonWidget(
-                          onPressed: () async {
-                              Get.defaultDialog(
-                                  title: "Alamat penjemputan kosong",
-                                  middleText:
-                                      "Mohon atur alamat penjemputan anda",
-                                  onConfirm: () => Get.back());
-                          
-                          },
-                          text: 'Lanjut',
-                          options: FFButtonOptions(
-                            width: double.infinity,
-                            height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).accent1,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleSmallFamily,
-                                  color: Colors.white,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleSmallFamily),
-                                ),
-                            elevation: 2.0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(21.0),
+            if (FFAppState().address == null || FFAppState().address == '')
+              Align(
+                alignment: AlignmentDirectional(0.0, 1.0),
+                child: Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      FFButtonWidget(
+                        onPressed: () async {
+                          Get.defaultDialog(
+                              title: "Alamat penjemputan kosong",
+                              middleText: "Mohon atur alamat penjemputan anda",
+                              onConfirm: () => Get.back());
+                        },
+                        text: 'Lanjut',
+                        options: FFButtonOptions(
+                          width: double.infinity,
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).accent1,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color: Colors.white,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
+                              ),
+                          elevation: 2.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
                           ),
+                          borderRadius: BorderRadius.circular(21.0),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
+              ),
             if (FFAppState().userData == null)
               Align(
                 alignment: AlignmentDirectional(0.0, 1.0),

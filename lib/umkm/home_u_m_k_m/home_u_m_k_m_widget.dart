@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:get/get.dart';
-import 'package:kolaka/search_filter/search_produk/search_produk_widget.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/search_filter/search_produk/search_produk_widget.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/components/pilih_lokasi_widget.dart';
@@ -1061,54 +1061,63 @@ class _HomeUMKMWidgetState extends State<HomeUMKMWidget> {
                                                           ),
                                                         ),
                                                         Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      5.0, 5.0, 0.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize:
-                                                    MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0.0,
-                                                                0.0,
-                                                                5.0,
-                                                                0.0),
-                                                    child: Icon(
-                                                      Icons.location_on,
-                                                      color: const Color
-                                                                  .fromARGB(
-                                                                  255,
-                                                                  65,
-                                                                  64,
-                                                                  64),
-                                                      size: 10.0,
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Text(
-                                                      getJsonField(
-                                                        listUmkmItem,
-                                                        r'''$.location_name''',
-                                                      ).toString(),
-                                                      style: TextStyle(
-                                                        color: const Color
-                                                                  .fromARGB(
-                                                                  255,
-                                                                  65,
-                                                                  64,
-                                                                  64),
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 10.0,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .location_on,
+                                                                  color: const Color
+                                                                      .fromARGB(
+                                                                      255,
+                                                                      65,
+                                                                      64,
+                                                                      64),
+                                                                  size: 10.0,
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                child: Text(
+                                                                  getJsonField(
+                                                                    listUmkmItem,
+                                                                    r'''$.location_name''',
+                                                                  ).toString(),
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: const Color
+                                                                        .fromARGB(
+                                                                        255,
+                                                                        65,
+                                                                        64,
+                                                                        64),
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                    fontSize:
+                                                                        10.0,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
@@ -1447,54 +1456,63 @@ class _HomeUMKMWidgetState extends State<HomeUMKMWidget> {
                                                           ),
                                                         ),
                                                         Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      5.0, 5.0, 0.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize:
-                                                    MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0.0,
-                                                                0.0,
-                                                                5.0,
-                                                                0.0),
-                                                    child: Icon(
-                                                      Icons.location_on,
-                                                      color: const Color
-                                                                  .fromARGB(
-                                                                  255,
-                                                                  65,
-                                                                  64,
-                                                                  64),
-                                                      size: 10.0,
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Text(
-                                                      getJsonField(
-                                                        listUmkm2Item,
-                                                        r'''$.location_name''',
-                                                      ).toString(),
-                                                      style: TextStyle(
-                                                        color: const Color
-                                                                  .fromARGB(
-                                                                  255,
-                                                                  65,
-                                                                  64,
-                                                                  64),
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 10.0,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .location_on,
+                                                                  color: const Color
+                                                                      .fromARGB(
+                                                                      255,
+                                                                      65,
+                                                                      64,
+                                                                      64),
+                                                                  size: 10.0,
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                child: Text(
+                                                                  getJsonField(
+                                                                    listUmkm2Item,
+                                                                    r'''$.location_name''',
+                                                                  ).toString(),
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: const Color
+                                                                        .fromARGB(
+                                                                        255,
+                                                                        65,
+                                                                        64,
+                                                                        64),
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                    fontSize:
+                                                                        10.0,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
                                                         Expanded(
                                                           child: Padding(
                                                             padding:

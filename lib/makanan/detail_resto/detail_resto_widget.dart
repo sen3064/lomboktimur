@@ -1,5 +1,5 @@
-import 'package:kolaka/components/ganti_pesanan_widget.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/components/ganti_pesanan_widget.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/components/buy_item_widget.dart';

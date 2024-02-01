@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:kolaka/Styles/button.dart';
-import 'package:kolaka/home/chat/chat_widget.dart';
+import 'package:kelotimaja/Styles/button.dart';
+import 'package:kelotimaja/home/chat/chat_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../theme.dart';

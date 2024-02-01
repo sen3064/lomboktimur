@@ -49,7 +49,7 @@ class CommonHelper {
   static Future<Map<String, dynamic>> storePlayerId(
       String playerId, String uid) async {
     final GetConnect connect = GetConnect();
-    var apiurl = "https://api.kolaka.kabtour.com/v2/store-player-id";
+    var apiurl = "https://api.kelotimaja.kabtour.com/v2/store-player-id";
     var response = await connect.put(apiurl, {"uid": uid, "token": playerId},
         headers: {"accept": "application/json"});
     var data = response.body;
@@ -60,7 +60,7 @@ class CommonHelper {
 
   static Future<List> getNotification(String uid) async {
     var apiurl =
-        "https://pg-api.kolaka.kabtour.com/v2/get-notification/$uid";
+        "https://pg-api.kelotimaja.kabtour.com/v2/get-notification/$uid";
     print(apiurl);
     final GetConnect connect = GetConnect();
     var response =
@@ -72,7 +72,7 @@ class CommonHelper {
 
   static Future<List> getReview(String type, String id) async {
     var apiurl =
-        "https://api.kolaka.kabtour.com/v2/review?object_model=$type&object_id=$id";
+        "https://api.kelotimaja.kabtour.com/v2/review?object_model=$type&object_id=$id";
     print(apiurl);
     final GetConnect connect = GetConnect();
     var response =
@@ -85,9 +85,11 @@ class CommonHelper {
   static unimplementedMethod() {
     Get.snackbar('Unimplemented', 'Method has not been implemented');
   }
- static implementedMethod() {
+
+  static implementedMethod() {
     Get.snackbar('Sukses', 'No. Rek sudah di simpan');
   }
+
   static String getRoleName(int roleId) {
     String roleName = 'Pelaku usaha';
     switch (roleId) {
@@ -117,16 +119,16 @@ class CommonHelper {
 
   static String getAvatarUrl(String avatarUrl) {
     if (avatarUrl == null || avatarUrl.isEmpty || avatarUrl == "avatar.png") {
-      avatarUrl = 'https://kolaka.kabtour.com/images/avatar.png';
+      avatarUrl = 'https://kelotimaja.kabtour.com/images/avatar.png';
     } else if (!isURL(avatarUrl)) {
       avatarUrl =
-          'https://kolaka.kabtour.com/images/avatar.png'; // default URL for invalid URLs
+          'https://kelotimaja.kabtour.com/images/avatar.png'; // default URL for invalid URLs
     }
     return avatarUrl;
   }
 
   static Future<List> getListLocation() async {
-    var apiurl = "https://api.kolaka.kabtour.com/v2/location";
+    var apiurl = "https://api.kelotimaja.kabtour.com/v2/location";
     print(apiurl);
     final GetConnect connect = GetConnect();
     var response =

@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:get/get.dart';
-import 'package:kolaka/makanan/cari_makanan_widget.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/makanan/cari_makanan_widget.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/alamat/pilih_alamat_antar_makanan/pilih_alamat_antar_makanan_widget.dart';
 import '/backend/api_requests/api_calls.dart';
@@ -1054,55 +1054,47 @@ class _HomeMakananWidgetState extends State<HomeMakananWidget> {
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                     Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      5.0, 5.0, 0.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize:
-                                                    MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0.0,
-                                                                0.0,
-                                                                5.0,
-                                                                0.0),
-                                                    child: Icon(
-                                                      Icons.location_on,
-                                                      color: const Color
-                                                                  .fromARGB(
-                                                                  255,
-                                                                  65,
-                                                                  64,
-                                                                  64),
-                                                      size: 10.0,
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Text(
-                                                      getJsonField(
-                                                        dataMakananRecItem,
-                                                        r'''$.location_name''',
-                                                      ).toString(),
-                                                      style: TextStyle(
-                                                        color: const Color
-                                                                  .fromARGB(
-                                                                  255,
-                                                                  65,
-                                                                  64,
-                                                                  64),
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 10.0,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Icon(
+                                                                              Icons.location_on,
+                                                                              color: const Color.fromARGB(255, 65, 64, 64),
+                                                                              size: 10.0,
+                                                                            ),
+                                                                          ),
+                                                                          Expanded(
+                                                                            child:
+                                                                                Text(
+                                                                              getJsonField(
+                                                                                dataMakananRecItem,
+                                                                                r'''$.location_name''',
+                                                                              ).toString(),
+                                                                              style: TextStyle(
+                                                                                color: const Color.fromARGB(255, 65, 64, 64),
+                                                                                fontWeight: FontWeight.w400,
+                                                                                fontSize: 10.0,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
                                                                     Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
@@ -1130,7 +1122,6 @@ class _HomeMakananWidgetState extends State<HomeMakananWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                         
                                                           ],
                                                         ),
                                                         // Align(

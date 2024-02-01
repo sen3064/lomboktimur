@@ -1,8 +1,7 @@
-
 import 'package:get/get.dart';
-import 'package:kolaka/core/constants/constant.dart';
+import 'package:kelotimaja/core/constants/constant.dart';
 
-import 'package:kolaka/main.dart';
+import 'package:kelotimaja/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -54,14 +53,15 @@ class _HalamanstatusMessageWidgetState
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 170.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      0.0, 170.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 12.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -75,10 +75,11 @@ class _HalamanstatusMessageWidgetState
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 16.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 0.0, 16.0),
                                         child: Icon(
                                           Icons.check,
                                           color: FlutterFlowTheme.of(context)
@@ -88,7 +89,8 @@ class _HalamanstatusMessageWidgetState
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         'Selesai',
                                         textAlign: TextAlign.center,
@@ -102,8 +104,9 @@ class _HalamanstatusMessageWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 12.0, 0.0, 0.0),
                                       child: Text(
                                         'Order berhasil diselesaikan',
                                         textAlign: TextAlign.center,
@@ -122,30 +125,28 @@ class _HalamanstatusMessageWidgetState
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     FFButtonWidget(
-                                      onPressed: 
-                                        // await Navigator.push(
-                                        //   context,
-                                        //   MaterialPageRoute(
-                                        //     builder: (context) =>
-                                        //         AturKamarWidget(
-                                        //       hid: '',
-                                        //       accessToken: '',
-                                        //       roomData: null!,
-                                        //     ),
-                                        //   ),
-                                        // );
-                                       () => Get.offAll(() => NavBarPage(initialPage: 'Home_Page')),
-            
-                                      
+                                      onPressed:
+                                          // await Navigator.push(
+                                          //   context,
+                                          //   MaterialPageRoute(
+                                          //     builder: (context) =>
+                                          //         AturKamarWidget(
+                                          //       hid: '',
+                                          //       accessToken: '',
+                                          //       roomData: null!,
+                                          //     ),
+                                          //   ),
+                                          // );
+                                          () => Get.offAll(() => NavBarPage(
+                                              initialPage: 'Home_Page')),
                                       text: 'Lanjutkan',
                                       options: FFButtonOptions(
                                         width: 220.0,
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                        iconPadding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .accent1,
                                         textStyle: FlutterFlowTheme.of(context)

@@ -1,4 +1,4 @@
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/components/pilih_tanggal_pesan_widget.dart';
 import '/components/wishlist_widget.dart';
@@ -68,9 +68,9 @@ class _ListKendaraanMobilWidgetState extends State<ListKendaraanMobilWidget> {
             },
           ),
           title: Text(
-              "Sewa Kendaraan Mobil",
-              style: bold16.copyWith(color: dark1),
-            ),
+            "Sewa Kendaraan Mobil",
+            style: bold16.copyWith(color: dark1),
+          ),
           actions: [],
           centerTitle: false,
           elevation: 0.0,

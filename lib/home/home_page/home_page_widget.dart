@@ -2,16 +2,16 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/about_us.dart';
-import 'package:kolaka/home/chat/chat_widget.dart';
-import 'package:kolaka/scan_page_widget.dart';
+import 'package:kelotimaja/about_us.dart';
+import 'package:kelotimaja/home/chat/chat_widget.dart';
+import 'package:kelotimaja/scan_page_widget.dart';
 
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/theme.dart';
 
-import 'package:kolaka/main.dart';
-import 'package:kolaka/makanan/detail_resto/detail_resto_widget.dart';
-import 'package:kolaka/transportasi/detail_transpotasi_mobil/detail_transpotasi_mobil_widget.dart';
-import 'package:kolaka/umkm/detail_produk_food/detail_produk_food_widget.dart';
+import 'package:kelotimaja/main.dart';
+import 'package:kelotimaja/makanan/detail_resto/detail_resto_widget.dart';
+import 'package:kelotimaja/transportasi/detail_transpotasi_mobil/detail_transpotasi_mobil_widget.dart';
+import 'package:kelotimaja/umkm/detail_produk_food/detail_produk_food_widget.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../search_filter/search.dart';
 import '../../tiket_wisata/beli_tiket_wisata/beli_tiket_wisata_widget.dart';
@@ -433,7 +433,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   //   },
                   // );
                   List<String> scanned = scannedValue.split('/');
-                  if (scanned[2] == 'm.kolaka.kabtour.com') {
+                  if (scanned[2] == 'm.kelotimaja.kabtour.com') {
                     if (FFAppState().accessToken.isNotEmpty) {
                       List<String> paramData = scanned[3].split('=');
                       String tiketId = paramData[1];
@@ -449,7 +449,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     Get.defaultDialog(
                         title: "Kode QR Tidak Sesuai",
                         middleText:
-                            "Silakan silahkan download aplikasi Kolaka untuk scan",
+                            "Silakan silahkan download aplikasi kelotimaja untuk scan",
                         onConfirm: () => Get.off(() => NavBarPage(
                               initialPage: 'Home_page',
                             )));
@@ -573,7 +573,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: Image.asset(
-                                'assets/images/Logo_kolaka.png',
+                                'assets/images/Logo_kelotimaja.png',
                                 width: 60,
                                 height: 70,
                                 fit: BoxFit.cover,

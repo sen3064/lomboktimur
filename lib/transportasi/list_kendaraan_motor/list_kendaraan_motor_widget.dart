@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:kolaka/core/constants/constant.dart';
-import 'package:kolaka/transportasi/detail_transpotasi_mobil/detail_transpotasi_mobil_widget.dart';
+import 'package:kelotimaja/core/constants/constant.dart';
+import 'package:kelotimaja/transportasi/detail_transpotasi_mobil/detail_transpotasi_mobil_widget.dart';
 
 import '../../backend/api_requests/api_calls.dart';
 import '../../backend/api_requests/api_manager.dart';
@@ -90,10 +90,11 @@ class _ListKendaraanMotorWidgetState extends State<ListKendaraanMotorWidget> {
                 onPressed: () async {
                   Navigator.pop(context);
                 },
-              ),title: Text(
-              "Sewa Kendaraan",
-              style: bold16.copyWith(color: dark1),
-            ),
+              ),
+              title: Text(
+                "Sewa Kendaraan",
+                style: bold16.copyWith(color: dark1),
+              ),
               actions: [],
               centerTitle: false,
               elevation: 0.0,

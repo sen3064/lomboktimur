@@ -1,18 +1,18 @@
 // TODO Implement this library.import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/core/constants/storage.dart';
-import 'package:kolaka/core/constants/subdomain.dart';
-import 'package:kolaka/core/helpers/auth_helper.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/core/services/api_client.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_util.dart';
-import 'package:kolaka/flutter_flow/form_field_controller.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
+import 'package:kelotimaja/core/constants/subdomain.dart';
+import 'package:kelotimaja/core/helpers/auth_helper.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/core/services/api_client.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_util.dart';
+import 'package:kelotimaja/flutter_flow/form_field_controller.dart';
 
 class AuthController extends GetxController {
   ApiClient apiClient = Get.isRegistered<ApiClient>()
-        ? Get.find<ApiClient>()
-        : Get.put(ApiClient());
+      ? Get.find<ApiClient>()
+      : Get.put(ApiClient());
   var isLogin = false.obs,
       isEmailVerified = false.obs,
       isVerified = false.obs,
@@ -71,7 +71,7 @@ class AuthController extends GetxController {
   Map<String, int> kecamatanMap = {
     'Kec. Toari': 72,
     'Kec. Baula': 73,
-    'Kec. Kolaka': 74,
+    'Kec. kelotimaja': 74,
     'Kec. Latambaga': 75,
     'Kec. Pomalaa': 76,
     'Kec. Samaturu': 77,

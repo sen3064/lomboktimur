@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:kolaka/core/constants/constant.dart';
-import 'package:kolaka/core/helpers/auth_helper.dart';
-import 'package:kolaka/core/services/api_client.dart';
-import 'package:kolaka/home/home_page/home_page_widget.dart';
+import 'package:kelotimaja/core/constants/constant.dart';
+import 'package:kelotimaja/core/helpers/auth_helper.dart';
+import 'package:kelotimaja/core/services/api_client.dart';
+import 'package:kelotimaja/home/home_page/home_page_widget.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
@@ -73,7 +73,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       if (currentUser != null) {
         // Jika login berhasil, kirim data ke API
         var response = await http.post(
-          Uri.parse("https://user-api.kolaka.kabtour.com/v2/login-google"),
+          Uri.parse("https://user-api.kelotimaja.kabtour.com/v2/login-google"),
           body: {
             'email': currentUser.email,
             'name': currentUser.displayName,
@@ -124,7 +124,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
             };
             print('Param kirim: $params');
             chatAccount = await apiClient.post(
-                'https://chat.kolaka.kabtour.com/api_request/',
+                'https://chat.kelotimaja.kabtour.com/api_request/',
                 data: params);
             print('akun chat: $chatAccount');
             chatAccount = jsonDecode(chatAccount['body']);
@@ -477,7 +477,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   };
                                   // print('Param kirim: $params');
                                   chatAccount = await apiClient.post(
-                                      'https://chat.kolaka.kabtour.com/api_request/',
+                                      'https://chat.kelotimaja.kabtour.com/api_request/',
                                       data: params);
                                   // print('akun chat: $chatAccount');
                                   chatAccount = jsonDecode(chatAccount['body']);

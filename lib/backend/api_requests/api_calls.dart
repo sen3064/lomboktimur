@@ -10,7 +10,7 @@ export 'api_manager.dart' show ApiCallResponse;
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class ChatGroup {
-  static String baseUrl = 'https://chat.kolaka.kabtour.com/';
+  static String baseUrl = 'https://chat.kelotimaja.kabtour.com/';
   static Map<String, String> headers = {};
   static ChatCall chatCall = ChatCall();
 }
@@ -53,7 +53,7 @@ class ChatCall {
 /// Start User Group Code
 
 class UserGroup {
-  static String baseUrl = 'https://user-api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://user-api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static UserLoginCall userLoginCall = UserLoginCall();
   static UserForgotCall userForgotCall = UserForgotCall();
@@ -226,18 +226,18 @@ class UserProfileEditCall {
     String? nik = '',
     String? gender = '',
   }) {
-    Map<String,dynamic> postParam = {
-        // 'avatar': avatar,
-        'name': name,
-        'email': email,
-        'phone': phone,
-        'birthday': birthday,
-        'nik': nik,
-        'gender': gender,
-      };
-      if(avatar!.bytes!.length>0){
-        postParam['avatar'] = avatar;
-      }
+    Map<String, dynamic> postParam = {
+      // 'avatar': avatar,
+      'name': name,
+      'email': email,
+      'phone': phone,
+      'birthday': birthday,
+      'nik': nik,
+      'gender': gender,
+    };
+    if (avatar!.bytes!.length > 0) {
+      postParam['avatar'] = avatar;
+    }
     return ApiManager.instance.makeApiCall(
       callName: 'User Edit Profile',
       apiUrl: '${UserGroup.baseUrl}/update?_method=PUT',
@@ -578,7 +578,7 @@ class UserAddressDeleteCall {
 /// Start Homestay Group Code
 
 class HomestayGroup {
-  static String baseUrl = 'https://hotel-api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://hotel-api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static HomestayListCall homestayListCall = HomestayListCall();
   static HomestaySearchCall homestaySearchCall = HomestaySearchCall();
@@ -911,7 +911,7 @@ class HomestaySearchCall {
 
 /// Start Rent Group Code
 class RentGroup {
-  static String baseUrl = 'https://rent-api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://rent-api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static RentListCall rentListCall = RentListCall();
 }
@@ -948,7 +948,7 @@ class RentListCall {
 /// Start Tour Group Code
 
 class EventGroup {
-  static String baseUrl = 'https://tour-api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://tour-api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static EventListCall eventListCall = EventListCall();
 }
@@ -995,7 +995,7 @@ class EventListCall {
 /// Start Api Helper Group Code
 
 class ApiHelperGroup {
-  static String baseUrl = 'https://api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static GetReviewHandlerCall getReviewHandlerCall = GetReviewHandlerCall();
   static ApiLocationCall apiLocationCall = ApiLocationCall();
@@ -1129,11 +1129,11 @@ class UpdateReviewHandlerCall {
 }
 
 /// End Api Helper Group Code
-/// 
+///
 /// Start API Search
 
 class SearchKeyGroup {
-  static String baseUrl = 'https://api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static ListAllProdukCall listAllProdukCall = ListAllProdukCall();
 }
@@ -1144,8 +1144,7 @@ class ListAllProdukCall {
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'Lokasi Produk All',
-      apiUrl:
-          '${SearchKeyGroup.baseUrl}/keyword-search?keyword=${keyword}',
+      apiUrl: '${SearchKeyGroup.baseUrl}/keyword-search?keyword=${keyword}',
       callType: ApiCallType.GET,
       headers: {
         ...SearchKeyGroup.headers,
@@ -1166,7 +1165,7 @@ class ListAllProdukCall {
 /// Start UMKM Group Code
 
 class UmkmGroup {
-  static String baseUrl = 'https://api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static ListProdukUMKMCall listProdukUMKMCall = ListProdukUMKMCall();
   static LokasiProdukUMKMCall lokasiProdukUMKMCall = LokasiProdukUMKMCall();
@@ -1222,14 +1221,12 @@ class SearchProdukCall {
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'Search Produk',
-      apiUrl:
-          '${UmkmGroup.baseUrl}/keyword-search?keyword=${keyword}',
+      apiUrl: '${UmkmGroup.baseUrl}/keyword-search?keyword=${keyword}',
       callType: ApiCallType.GET,
       headers: {
         ...UmkmGroup.headers,
       },
-      params: {
-      },
+      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -1284,7 +1281,7 @@ class FilterKategoriCall {
 /// Start Makanan minuman Group Code
 
 class MakananMinumanGroup {
-  static String baseUrl = 'https://api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static GetMakananCall getMakananCall = GetMakananCall();
   static ListMakananCall listMakananCall = ListMakananCall();
@@ -1427,7 +1424,7 @@ class FilterPaketCall {
 /// Start Tiket Group
 
 class TiketWisataGroup {
-  static String baseUrl = 'https://api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static GetTiketWisataCall getTiketWisataCall = GetTiketWisataCall();
   static FilterTiketWisataCall filterTiketWisataCall = FilterTiketWisataCall();
@@ -1499,16 +1496,16 @@ class BeliTiketWisataCall {
     String? email = '',
   }) {
     Map<String, dynamic> postParam = {
-        'tiket_id': tiketId,
-        'nama': nama,
-        'dewasa': dewasa,
-        'anak': anak,
-        'phone': phone,
-        'email': email,
-      };
-      if(FFAppState().accessToken.isNotEmpty){
-        postParam['user_id'] = FFAppState().userData['id'];
-      }
+      'tiket_id': tiketId,
+      'nama': nama,
+      'dewasa': dewasa,
+      'anak': anak,
+      'phone': phone,
+      'email': email,
+    };
+    if (FFAppState().accessToken.isNotEmpty) {
+      postParam['user_id'] = FFAppState().userData['id'];
+    }
     return ApiManager.instance.makeApiCall(
       callName: 'User Reset Password',
       apiUrl: '${TiketWisataGroup.baseUrl}/checkin-wisata',
@@ -1527,15 +1524,16 @@ class BeliTiketWisataCall {
 }
 
 /// End tiket group
-/// 
+///
 /// Start Tentng kabupaten
-/// 
+///
 
 class TentangKabupatenGroup {
-  static String baseUrl = 'https://api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static TentangKabCall tentangKabCall = TentangKabCall();
 }
+
 class TentangKabCall {
   Future<ApiCallResponse> call() {
     return ApiManager.instance.makeApiCall(
@@ -1557,7 +1555,7 @@ class TentangKabCall {
 /// Start Booking Handler Group Code
 
 class BookingHandlerGroup {
-  static String baseUrl = 'https://booking-api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://booking-api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static HomestayCall homestayCall = HomestayCall();
   static TransaksiCall transaksiCall = TransaksiCall();
@@ -1985,7 +1983,7 @@ class PaymentMakananMinumanUMKMCall {
 /// Start Payment Gateway Group Code
 
 class PaymentGatewayGroup {
-  static String baseUrl = 'https://pg-api.kolaka.kabtour.com/v2';
+  static String baseUrl = 'https://pg-api.kelotimaja.kabtour.com/v2';
   static Map<String, String> headers = {};
   static ApiPaymentCall apiPaymentCall = ApiPaymentCall();
 }

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/components/ubah_data_booking_backup_widget.dart';

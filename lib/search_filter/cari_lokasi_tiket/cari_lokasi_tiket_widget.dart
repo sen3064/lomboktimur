@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:kolaka/components/ubah_data_tiket_widget.dart';
+import 'package:kelotimaja/components/ubah_data_tiket_widget.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -224,39 +224,40 @@ class _CariLokasiTiketWidgetState extends State<CariLokasiTiketWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                        Get.bottomSheet(
-                                          GestureDetector(
-                                            onTap: () => FocusScope.of(context)
-                                                .requestFocus(
-                                                    _model.unfocusNode),
-                                            child: Padding(
-                                              padding: MediaQuery.of(context)
-                                                  .viewInsets,
-                                              child:
-                                                  UbahDataTiketWidget(
-                                                startDate: formattedStartdate,
-                                                endDate: formattedEndate,
+                                          Get.bottomSheet(
+                                            GestureDetector(
+                                              onTap: () =>
+                                                  FocusScope.of(context)
+                                                      .requestFocus(
+                                                          _model.unfocusNode),
+                                              child: Padding(
+                                                padding: MediaQuery.of(context)
+                                                    .viewInsets,
+                                                child: UbahDataTiketWidget(
+                                                  startDate: formattedStartdate,
+                                                  endDate: formattedEndate,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          backgroundColor: Colors.transparent,
-                                          isDismissible: true,
-                                          isScrollControlled: true,
-                                        );
-                                        setState(() {
-                                          FFAppState().location = getJsonField(
-                                            locationsItem,
-                                            r'''$.name''',
-                                          ).toString();
-                                          FFAppState().locationId =
-                                              getJsonField(
-                                            locationsItem,
-                                            r'''$.id''',
-                                          ).toString();
-                                        });
-                                        // Navigator.pop(context);
-                                        // Get.back();Get.bottomSheet(
-                                      },
+                                            backgroundColor: Colors.transparent,
+                                            isDismissible: true,
+                                            isScrollControlled: true,
+                                          );
+                                          setState(() {
+                                            FFAppState().location =
+                                                getJsonField(
+                                              locationsItem,
+                                              r'''$.name''',
+                                            ).toString();
+                                            FFAppState().locationId =
+                                                getJsonField(
+                                              locationsItem,
+                                              r'''$.id''',
+                                            ).toString();
+                                          });
+                                          // Navigator.pop(context);
+                                          // Get.back();Get.bottomSheet(
+                                        },
                                         child: ListTile(
                                           leading: Icon(
                                             Icons.location_pin,

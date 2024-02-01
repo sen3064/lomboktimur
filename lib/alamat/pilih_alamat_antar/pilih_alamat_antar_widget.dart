@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/alamat/ubah_alamat_antar/main_state.dart';
+import 'package:kelotimaja/alamat/ubah_alamat_antar/main_state.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -67,7 +67,7 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                     Container(
                       width: double.infinity,
                       height: 50.0,
-                       // child: custom_widgets.PlacePicker(
+                      // child: custom_widgets.PlacePicker(
                       //   width: double.infinity,
                       //   height: 250.0,
                       //   action: () async {
@@ -77,8 +77,8 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                       //   },
                       // ),
                       child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 0.0),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -188,7 +188,7 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                       // final longitude = geoPoint?.longitude;
                                       // final apiUrl =
                                       //     'https://maps.googleapis.com/maps/api/geocode/json?latlng=$latitude,$longitude&key=$apiKey';
-              
+
                                       // // Mengirim permintaan HTTP untuk mendapatkan alamat
                                       // final response =
                                       //     await http.get(Uri.parse(apiUrl));
@@ -197,7 +197,7 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                       //   final Map<String, dynamic> data =
                                       //       json.decode(response.body);
                                       //   final results = data['results'];
-              
+
                                       //   if (results.isNotEmpty) {
                                       //     final formattedAddress =
                                       //         results[0]['formatted_address'];
@@ -214,9 +214,10 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                       width: Get.width,
                                       height: 50.0,
                                       decoration: BoxDecoration(
-                                        color:
-                                            FlutterFlowTheme.of(context).accent1,
-                                        borderRadius: BorderRadius.circular(21.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .accent1,
+                                        borderRadius:
+                                            BorderRadius.circular(21.0),
                                       ),
                                       child: Align(
                                           alignment:
@@ -235,10 +236,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .titleMediumFamily,
-                                                          color:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .secondaryText,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
                                                               .containsKey(
@@ -306,15 +306,18 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                         controller: _model.textController1,
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          labelStyle: FlutterFlowTheme.of(context)
-                                              .labelMedium,
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
                                           hintText: 'Detail Alamat',
-                                          hintStyle: FlutterFlowTheme.of(context)
-                                              .labelMedium,
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .accent1,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent1,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -322,8 +325,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           ),
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .primary,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -331,8 +335,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           ),
                                           errorBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -341,8 +346,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           focusedErrorBorder:
                                               UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -352,7 +358,8 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
                                         maxLines: 3,
-                                        validator: _model.textController1Validator
+                                        validator: _model
+                                            .textController1Validator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -370,11 +377,12 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily:
-                                                      FlutterFlowTheme.of(context)
+                                                      FlutterFlowTheme.of(
+                                                              context)
                                                           .bodyMediumFamily,
-                                                  color:
-                                                      FlutterFlowTheme.of(context)
-                                                          .secondary,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondary,
                                                   fontWeight: FontWeight.w500,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
@@ -390,11 +398,12 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily:
-                                                      FlutterFlowTheme.of(context)
+                                                      FlutterFlowTheme.of(
+                                                              context)
                                                           .bodyMediumFamily,
-                                                  color:
-                                                      FlutterFlowTheme.of(context)
-                                                          .secondary,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondary,
                                                   fontWeight: FontWeight.w500,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
@@ -441,10 +450,12 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                         controller: _model.textController2,
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          labelStyle: FlutterFlowTheme.of(context)
-                                              .labelMedium,
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
                                           hintText: '',
-                                          hintStyle: FlutterFlowTheme.of(context)
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
                                               .labelMedium
                                               .override(
                                                 fontFamily:
@@ -460,8 +471,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                               ),
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .accent1,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent1,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -469,8 +481,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           ),
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .primary,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -478,8 +491,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           ),
                                           errorBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -488,8 +502,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           focusedErrorBorder:
                                               UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -498,7 +513,8 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
-                                        validator: _model.textController2Validator
+                                        validator: _model
+                                            .textController2Validator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -536,9 +552,11 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                         controller: _model.textController3,
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          labelStyle: FlutterFlowTheme.of(context)
-                                              .labelMedium,
-                                          hintStyle: FlutterFlowTheme.of(context)
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
                                               .labelMedium
                                               .override(
                                                 fontFamily:
@@ -554,8 +572,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                               ),
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .accent1,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent1,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -563,8 +582,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           ),
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .primary,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -572,8 +592,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           ),
                                           errorBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -582,8 +603,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           focusedErrorBorder:
                                               UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -592,7 +614,8 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
-                                        validator: _model.textController3Validator
+                                        validator: _model
+                                            .textController3Validator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -630,9 +653,11 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                         controller: _model.textController4,
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          labelStyle: FlutterFlowTheme.of(context)
-                                              .labelMedium,
-                                          hintStyle: FlutterFlowTheme.of(context)
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
                                               .labelMedium
                                               .override(
                                                 fontFamily:
@@ -648,8 +673,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                               ),
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .accent1,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent1,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -657,8 +683,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           ),
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .primary,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -666,8 +693,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           ),
                                           errorBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -676,8 +704,9 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                           focusedErrorBorder:
                                               UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
                                               width: 2.0,
                                             ),
                                             borderRadius:
@@ -687,7 +716,8 @@ class _PilihAlamatAntarWidgetState extends State<PilihAlamatAntarWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
                                         keyboardType: TextInputType.phone,
-                                        validator: _model.textController4Validator
+                                        validator: _model
+                                            .textController4Validator
                                             .asValidator(context),
                                       ),
                                     ),

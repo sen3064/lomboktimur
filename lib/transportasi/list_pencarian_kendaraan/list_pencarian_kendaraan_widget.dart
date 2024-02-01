@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/components/pilih_tanggal_pesan_widget.dart';
 import '/components/wishlist_widget.dart';
@@ -86,10 +86,11 @@ class _ListPencarianKendaraanWidgetState
                 onPressed: () async {
                   Navigator.pop(context);
                 },
-              ),title: Text(
-              "Pencarian Sewa Kendaraan",
-              style: bold16.copyWith(color: dark1),
-            ),
+              ),
+              title: Text(
+                "Pencarian Sewa Kendaraan",
+                style: bold16.copyWith(color: dark1),
+              ),
               actions: [],
               centerTitle: false,
               elevation: 0.0,

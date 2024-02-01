@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:kolaka/core/constants/storage.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
 
 class GPSService extends GetConnect {
   @override
@@ -7,7 +7,7 @@ class GPSService extends GetConnect {
     // // add your local storage here to load for every request
     // var token = userStorage.read('access_token');
     //1.base_url
-    httpClient.baseUrl = "https://api.kolaka.kabtour.com/v2/";
+    httpClient.baseUrl = "https://api.kelotimaja.kabtour.com/v2/";
     //2.
     httpClient.defaultContentType = "application/json";
     // // httpClient.timeout = Duration(seconds: 8);

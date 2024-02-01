@@ -1,11 +1,11 @@
-import 'package:kolaka/backend/api_requests/api_calls.dart';
-import 'package:kolaka/components/pilih_lokasi_widget.dart';
-import 'package:kolaka/components/webview_dua_screen.dart';
-import 'package:kolaka/components/webview_screen.dart';
-import 'package:kolaka/core/services/api_client.dart';
-import 'package:kolaka/forgot_reset_password/change_password/change_password_widget.dart';
-import 'package:kolaka/home/setting_profile/rekening/rekening_screen.dart';
-import 'package:kolaka/main.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/components/pilih_lokasi_widget.dart';
+import 'package:kelotimaja/components/webview_dua_screen.dart';
+import 'package:kelotimaja/components/webview_screen.dart';
+import 'package:kelotimaja/core/services/api_client.dart';
+import 'package:kelotimaja/forgot_reset_password/change_password/change_password_widget.dart';
+import 'package:kelotimaja/home/setting_profile/rekening/rekening_screen.dart';
+import 'package:kelotimaja/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:get/get.dart';
 import '/components/popup_logout_widget.dart';
@@ -37,8 +37,8 @@ class SettingProfileWidget extends StatefulWidget {
 
 class _SettingProfileWidgetState extends State<SettingProfileWidget> {
   ApiClient apiClient = Get.isRegistered<ApiClient>()
-        ? Get.find<ApiClient>()
-        : Get.put(ApiClient());
+      ? Get.find<ApiClient>()
+      : Get.put(ApiClient());
   late SettingProfileModel _model;
   late ImagePicker _picker;
   String? _pickedImageUrl;
@@ -342,8 +342,8 @@ class _SettingProfileWidgetState extends State<SettingProfileWidget> {
                                                       Colors.transparent,
                                                   highlightColor:
                                                       Colors.transparent,
-                                                  onTap: () =>
-                                      Get.to(() => const RekeningScreen()),
+                                                  onTap: () => Get.to(() =>
+                                                      const RekeningScreen()),
                                                   child: Text(
                                                     'Dompet Saya  ',
                                                     style: FlutterFlowTheme.of(
@@ -358,9 +358,9 @@ class _SettingProfileWidgetState extends State<SettingProfileWidget> {
                                                   AlignmentDirectional(1, 0),
                                               child: Text(
                                                 'Rp ${NumberFormat.currency(locale: 'id_ID', symbol: '', decimalDigits: 0).format(int.parse(FFAppState().userData['user_wallet']['balance'] ?? '0'))}',
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .titleSmall,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall,
                                               ),
                                             ),
                                             Align(
@@ -368,9 +368,9 @@ class _SettingProfileWidgetState extends State<SettingProfileWidget> {
                                                   AlignmentDirectional(1, 0),
                                               child: Icon(
                                                 Icons.arrow_forward_ios,
-                                                color: FlutterFlowTheme.of(
-                                                        context)
-                                                    .accent1,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .accent1,
                                                 size: 20,
                                               ),
                                             ),
@@ -686,7 +686,7 @@ class _SettingProfileWidgetState extends State<SettingProfileWidget> {
                                               arguments: {
                                                 'title': 'Privacy-Policy',
                                                 'url':
-                                                    'https://kolaka.kabtour.com/page/privacy-policy'
+                                                    'https://kelotimaja.kabtour.com/page/privacy-policy'
                                               }),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -734,7 +734,7 @@ class _SettingProfileWidgetState extends State<SettingProfileWidget> {
                                               arguments: {
                                                 'title': 'Syarat dan Ketentuan',
                                                 'url':
-                                                    'https://kolaka.kabtour.com/page/terms-of-use'
+                                                    'https://kelotimaja.kabtour.com/page/terms-of-use'
                                               }),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -780,7 +780,7 @@ class _SettingProfileWidgetState extends State<SettingProfileWidget> {
                                           onTap: () => Get.defaultDialog(
                                             title: "Tentang Aplikasi",
                                             middleText:
-                                                "Aplikasi untuk Wisatawan di Kabupaten Kolaka, memungkinkan untuk menggunakan produk dan layanan dalam skala yang lebih luas dan menjangkau lebih banyak produk potensial. Menjembatani kesenjangan antara online dan offline dalam industri pariwisata. Aplikasi Kolaka membantu pemasok untuk online dan menambah nilai melalui memperluas jangkauan pelanggan secara online. Pusat informasi pariwisata menyediakan informasi tentang sorotan destinasi dan tempat wisata di Kabupaten Kolaka. Memungkinkan wisatawan untuk berbagi pengalaman nyata mereka.",
+                                                "Aplikasi untuk Wisatawan di Kabupaten kelotimaja, memungkinkan untuk menggunakan produk dan layanan dalam skala yang lebih luas dan menjangkau lebih banyak produk potensial. Menjembatani kesenjangan antara online dan offline dalam industri pariwisata. Aplikasi kelotimaja membantu pemasok untuk online dan menambah nilai melalui memperluas jangkauan pelanggan secara online. Pusat informasi pariwisata menyediakan informasi tentang sorotan destinasi dan tempat wisata di Kabupaten kelotimaja. Memungkinkan wisatawan untuk berbagi pengalaman nyata mereka.",
                                             onConfirm: () => Get.back(),
                                           ),
                                           child: Row(

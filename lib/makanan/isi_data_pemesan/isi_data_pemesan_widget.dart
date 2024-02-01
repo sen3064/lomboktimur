@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/index.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/index.dart';
 import 'package:http/http.dart' as http;
 
 import '../services/product_service.dart';
@@ -36,19 +36,22 @@ class _IsiDataPemesanWidgetState extends State<IsiDataPemesanWidget> {
 
     _model.textController1 ??= TextEditingController(
         text: getJsonField(
-      FFAppState().userData,
-      r'''$.name''',
-    )?.toString() ?? '');
+              FFAppState().userData,
+              r'''$.name''',
+            )?.toString() ??
+            '');
     _model.textController2 ??= TextEditingController(
         text: getJsonField(
-      FFAppState().userData,
-      r'''$.email''',
-    )?.toString() ?? '');
+              FFAppState().userData,
+              r'''$.email''',
+            )?.toString() ??
+            '');
     _model.textController3 ??= TextEditingController(
         text: getJsonField(
-      FFAppState().userData,
-      r'''$.phone''',
-    )?.toString() ?? '');
+              FFAppState().userData,
+              r'''$.phone''',
+            )?.toString() ??
+            '');
   }
 
   @override
@@ -60,7 +63,7 @@ class _IsiDataPemesanWidgetState extends State<IsiDataPemesanWidget> {
 
   // static Future<Map<String, dynamic>> sendBooking(token, param) async {
   //   var apiurl =
-  //       "https://booking-api.kolaka.kabtour.com/v2/booking/food-beverage";
+  //       "https://booking-api.kelotimaja.kabtour.com/v2/booking/food-beverage";
   //   var response = await http.post(Uri.parse(apiurl),
   //       headers: {
   //         "Accept": "application/json",
@@ -639,9 +642,8 @@ class _IsiDataPemesanWidgetState extends State<IsiDataPemesanWidget> {
                               items['email'] = _model.textController2.text;
                               items['phone'] = _model.textController3.text;
                               var response = await HttpService.sendBooking(
-                                  FFAppState().accessToken,
-                                  jsonEncode(items));
-                                  // print(jsonEncode(items));
+                                  FFAppState().accessToken, jsonEncode(items));
+                              // print(jsonEncode(items));
                               // CommonHelper.logPrint(jsonEncode(items));
                               // CommonHelper.logPrint(response);
                               Get.to(() => KonfirmasiPembayaranMakananWidget(

@@ -351,7 +351,7 @@ class _HomeTiketWidgetState extends State<HomeTiketWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              'Tiket Wisata Kab Kolaka',
+                                              'Tiket Wisata Kab kelotimaja',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge

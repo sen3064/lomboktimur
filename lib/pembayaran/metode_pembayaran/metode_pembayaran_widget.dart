@@ -1,4 +1,4 @@
-import 'package:kolaka/pembayaran/konfirmasi_pembayaran_homestay/konfirmasi_pembayaran_homestay_widget.dart';
+import 'package:kelotimaja/pembayaran/konfirmasi_pembayaran_homestay/konfirmasi_pembayaran_homestay_widget.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

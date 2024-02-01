@@ -15,11 +15,11 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.kabtour.kolaka</string>
+	<string>com.kabtour.kelotimaja</string>
 	<key>PROJECT_ID</key>
-	<string>kolaka-81a59</string>
+	<string>kelotimaja-81a59</string>
 	<key>STORAGE_BUCKET</key>
-	<string>kolaka-81a59.appspot.com</string>
+	<string>kelotimaja-81a59.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>

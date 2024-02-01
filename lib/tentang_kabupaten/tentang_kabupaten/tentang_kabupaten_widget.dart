@@ -1,5 +1,5 @@
-import 'package:kolaka/backend/api_requests/api_calls.dart';
-import 'package:kolaka/backend/api_requests/api_manager.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/backend/api_requests/api_manager.dart';
 import 'package:http/http.dart' as http;
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -198,7 +198,7 @@ class _TentangKabupatenWidgetState extends State<TentangKabupatenWidget> {
                               ),
 
                               // Text(
-                              //   'Kecamatan-kecamatan di kabupaten Kolaka',
+                              //   'Kecamatan-kecamatan di kabupaten kelotimaja',
                               //   textAlign: TextAlign.start,
                               //   style: FlutterFlowTheme.of(context)
                               //       .titleMedium
@@ -214,7 +214,7 @@ class _TentangKabupatenWidgetState extends State<TentangKabupatenWidget> {
                               // Padding(
                               //   padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                               //   child: Text(
-                              //     'Ada 7 kecamatan yang berada di dalam kabupaten Kolaka, yaitu: kecamatan Komodo, kecamatan Sano Nggoang, kecamatan Boleng, kecamatan Lembor, kecamatan Welak, kecamatan Kuwus, dan kecamatan Macang Pacar.\n\nSalah satu bukti prasejarah yang masih ada sampai sekarang di Kolaka berada di kecamatan Komodo yang memiliki peranan penting sebagai sebuah kawasan pelestarian hewan langka yaitu Komodo (Varanus komodoensis) yang merupakan kadal tertua yang masih hidup. Satwa ini hidup di pulau Komodo dan beberapa pulau lainnya, seperti pulau Rinca dan Gili Motang. Pulau Komodo merupakan habitat asli satwa ini dan telah ditetapkan sebagai Taman Nasional Komodo yang dikelola oleh pemerintah. Pada tahun 1986, pulau Komodo ditetapkan sebagai situs warisan dunia oleh UNESCO. Pada tahun 2009, pulau Komodo juga menerima penghargaan New Seven Wonders of Nature.\n\nSelanjutnya pada tahun 2011, terjadi pemekaran wilayah dengan tambahan 3 kecamatan lagi, yaitu: kecamatan Lembor Selatan, kecamatan Mbeliling dan kecamatan Ndoso.\nWilayah kabupaten Kolaka menambah 2 kecamatan lagi pada tahun 2017, yaitu: kecamatan Pacar dan kecamatan Kuwus Barat.\n',
+                              //     'Ada 7 kecamatan yang berada di dalam kabupaten kelotimaja, yaitu: kecamatan Komodo, kecamatan Sano Nggoang, kecamatan Boleng, kecamatan Lembor, kecamatan Welak, kecamatan Kuwus, dan kecamatan Macang Pacar.\n\nSalah satu bukti prasejarah yang masih ada sampai sekarang di kelotimaja berada di kecamatan Komodo yang memiliki peranan penting sebagai sebuah kawasan pelestarian hewan langka yaitu Komodo (Varanus komodoensis) yang merupakan kadal tertua yang masih hidup. Satwa ini hidup di pulau Komodo dan beberapa pulau lainnya, seperti pulau Rinca dan Gili Motang. Pulau Komodo merupakan habitat asli satwa ini dan telah ditetapkan sebagai Taman Nasional Komodo yang dikelola oleh pemerintah. Pada tahun 1986, pulau Komodo ditetapkan sebagai situs warisan dunia oleh UNESCO. Pada tahun 2009, pulau Komodo juga menerima penghargaan New Seven Wonders of Nature.\n\nSelanjutnya pada tahun 2011, terjadi pemekaran wilayah dengan tambahan 3 kecamatan lagi, yaitu: kecamatan Lembor Selatan, kecamatan Mbeliling dan kecamatan Ndoso.\nWilayah kabupaten kelotimaja menambah 2 kecamatan lagi pada tahun 2017, yaitu: kecamatan Pacar dan kecamatan Kuwus Barat.\n',
                               //     style: FlutterFlowTheme.of(context).bodySmall,
                               //   ),
                               // ),
@@ -259,7 +259,7 @@ class _TentangKabupatenWidgetState extends State<TentangKabupatenWidget> {
                               // Padding(
                               //   padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                               //   child: Text(
-                              //     'Kabupaten Kolaka yang terletak di bagian Timur Indonesia, tepatnya di Nusa Tenggara Timur, menyimpan pesona alam yang sangat fantastis. \nTidak heran jika wilayah ini menjadi salah satu destinasi paling favorit yang banyak dikunjungi oleh wisatawan domestik maupun mancanegara.\nTempat-tempat wisata favorit yang wajib dikunjungi di wilayah ini, adalah:\n',
+                              //     'Kabupaten kelotimaja yang terletak di bagian Timur Indonesia, tepatnya di Nusa Tenggara Timur, menyimpan pesona alam yang sangat fantastis. \nTidak heran jika wilayah ini menjadi salah satu destinasi paling favorit yang banyak dikunjungi oleh wisatawan domestik maupun mancanegara.\nTempat-tempat wisata favorit yang wajib dikunjungi di wilayah ini, adalah:\n',
                               //     style: FlutterFlowTheme.of(context).bodySmall,
                               //   ),
                               // ),

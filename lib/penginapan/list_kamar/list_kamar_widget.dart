@@ -1,9 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/home/chat/chat_widget.dart';
-import 'package:kolaka/main.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/home/chat/chat_widget.dart';
+import 'package:kelotimaja/main.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/components/ubah_data_booking_backup_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';

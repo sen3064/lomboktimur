@@ -1,8 +1,8 @@
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/Styles/button.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/Styles/button.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -94,7 +94,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Image.asset(
-                              'assets/images/Logo_kolaka1.png',
+                              'assets/images/Logo_kelotimaja1.png',
                               width: 230,
                               height: 300,
                               fit: BoxFit.cover,

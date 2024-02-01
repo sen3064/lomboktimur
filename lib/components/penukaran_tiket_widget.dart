@@ -139,7 +139,7 @@ class _PenukaranTiketWidgetState extends State<PenukaranTiketWidget> {
                                 children: [
                                   TextSpan(
                                     text:
-                                        'Customer wajib membawa dan menunjukan e-tiket dari Kolaka',
+                                        'Customer wajib membawa dan menunjukan e-tiket dari kelotimaja',
                                     style:
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   )

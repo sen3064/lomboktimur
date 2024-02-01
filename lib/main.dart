@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/core/services/api_client.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/core/services/api_client.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
-import 'package:kolaka/index.dart';
+import 'package:kelotimaja/index.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -216,7 +216,7 @@ class _MyAppState extends State<MyApp> {
         splitScreenMode: true,
         builder: (context, child) {
           return GetMaterialApp(
-            title: 'Kolaka',
+            title: 'kelotimaja',
             debugShowCheckedModeBanner: false,
             localizationsDelegates: [
               FFLocalizationsDelegate(),

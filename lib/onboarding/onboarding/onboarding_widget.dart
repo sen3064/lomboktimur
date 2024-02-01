@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 
 import 'onboarding_model.dart';
 export 'onboarding_model.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/theme.dart';
 
 class OnboardingWidget extends StatefulWidget {
   const OnboardingWidget({Key? key}) : super(key: key);
@@ -392,7 +392,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           20, 10, 20, 0),
                                       child: Text(
-                                        'Kamu bisa dapatkan lebih banyak di Kolaka, mulai dari cari penginapan, UMKM dan kebutuhan wisata Anda lainnya.',
+                                        'Kamu bisa dapatkan lebih banyak di kelotimaja, mulai dari cari penginapan, UMKM dan kebutuhan wisata Anda lainnya.',
                                         textAlign: TextAlign.center,
                                         style: regular14.copyWith(color: dark2),
                                       )),
@@ -497,14 +497,14 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
                                   child: Image.network(
-                                    'https://kolaka.kabtour.com/uploads/0000/1/2023/10/24/lambang-kolaka.png',
+                                    'https://kelotimaja.kabtour.com/uploads/0000/1/2023/10/24/lambang-kelotimaja.png',
                                     width: 150,
                                     height: 150,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                                 Text(
-                                  'Kolaka',
+                                  'kelotimaja',
                                   style: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .override(

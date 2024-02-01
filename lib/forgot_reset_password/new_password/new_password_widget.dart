@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:kolaka/backend/api_requests/api_calls.dart';
-import 'package:kolaka/signup_signin_setup/login_page/login_page_widget.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/signup_signin_setup/login_page/login_page_widget.dart';
 
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -35,7 +35,8 @@ class _NewPasswordWidgetState extends State<NewPasswordWidget> {
     _model = createModel(context, () => NewPasswordModel());
 
     _model.mailController ??= TextEditingController(
-        text:  widget.email ?? getJsonField(FFAppState().userData, r'''$.email'''));
+        text: widget.email ??
+            getJsonField(FFAppState().userData, r'''$.email'''));
     _model.passwordController1 ??= TextEditingController();
     _model.passwordController2 ??= TextEditingController();
   }
@@ -136,79 +137,85 @@ class _NewPasswordWidgetState extends State<NewPasswordWidget> {
                               tabletLandscape: false,
                               desktop: false,
                             ))
-                            Expanded(
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
-                                child: Container(
-                                  width: double.infinity,
-                                  child: TextFormField(
-                                    controller: _model.mailController,
-                                    autofillHints: [AutofillHints.email],
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelText: 'Email',
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLargeFamily,
-                                            fontSize: 12,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLargeFamily),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 16),
+                                  child: Container(
+                                    width: double.infinity,
+                                    child: TextFormField(
+                                      controller: _model.mailController,
+                                      autofillHints: [AutofillHints.email],
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Email',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
+                                              fontSize: 12,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLargeFamily),
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x0059BCD2),
+                                            width: 1,
                                           ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x0059BCD2),
-                                          width: 1,
+                                          borderRadius:
+                                              BorderRadius.circular(12),
                                         ),
-                                        borderRadius: BorderRadius.circular(12),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        prefixIcon: Icon(
+                                          Icons.mail,
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          width: 1,
+                                          size: 20,
                                         ),
-                                        borderRadius: BorderRadius.circular(12),
                                       ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
-                                          width: 1,
-                                        ),
-                                        borderRadius: BorderRadius.circular(12),
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
-                                          width: 1,
-                                        ),
-                                        borderRadius: BorderRadius.circular(12),
-                                      ),
-                                      filled: true,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      prefixIcon: Icon(
-                                        Icons.mail,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 20,
-                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge,
+                                      validator: _model.mailControllerValidator
+                                          .asValidator(context),
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyLarge,
-                                    validator: _model.mailControllerValidator
-                                        .asValidator(context),
                                   ),
                                 ),
                               ),
-                            ),
                           ],
                         ),
                         Row(

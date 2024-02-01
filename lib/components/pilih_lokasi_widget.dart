@@ -1,7 +1,7 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:kolaka/alamat/ubah_alamat_antar/picker_demo.dart';
+import 'package:kelotimaja/alamat/ubah_alamat_antar/picker_demo.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '/alamat/pilih_alamat_antar/pilih_alamat_antar_widget.dart';
@@ -13,7 +13,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/place.dart';
 import 'dart:io';
-import 'package:kolaka/main.dart';
+import 'package:kelotimaja/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

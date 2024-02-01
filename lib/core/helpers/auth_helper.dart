@@ -1,4 +1,4 @@
-import 'package:kolaka/core/constants/storage.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class GoogleSignInSingleton {
@@ -15,7 +15,8 @@ class AuthProvider {
   Future<void> loginWithGoogle() async {
     try {
       final GoogleSignIn _googleSignIn = GoogleSignInSingleton.instance;
-      final GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
+      final GoogleSignInAccount? googleSignInAccount =
+          await _googleSignIn.signIn();
 
       if (googleSignInAccount != null) {
         // Simpan informasi pengguna di sini

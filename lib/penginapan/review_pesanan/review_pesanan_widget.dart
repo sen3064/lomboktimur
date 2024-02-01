@@ -1,4 +1,4 @@
-import 'package:kolaka/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
 
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -56,19 +56,18 @@ class _ReviewPesananWidgetState extends State<ReviewPesananWidget> {
     super.initState();
     _model = createModel(context, () => ReviewPesananModel());
     _model.textController1 ??= TextEditingController(
-        text:
-            (((widget.countCntrler! *
-                        (getJsonField(
-                              widget.roomData,
-                              r'''$.tmp_nights''',
-                            ) *
-                            double.parse(getJsonField(
-                              widget.roomData,
-                              r'''$.price_final''',
-                            ).toString().toString()))) +
-                    double.parse(FFAppState().taxAdmin)))
-                .toString());
-                
+        text: (((widget.countCntrler! *
+                    (getJsonField(
+                          widget.roomData,
+                          r'''$.tmp_nights''',
+                        ) *
+                        double.parse(getJsonField(
+                          widget.roomData,
+                          r'''$.price_final''',
+                        ).toString().toString()))) +
+                double.parse(FFAppState().taxAdmin)))
+            .toString());
+
     _model.textController2 ??= TextEditingController(
         text: (((widget.countCntrler! *
                         double.parse(getJsonField(
@@ -919,56 +918,56 @@ class _ReviewPesananWidgetState extends State<ReviewPesananWidget> {
                                   ],
                                 ),
                                 if (widget.userData['user_wallet'] != null)
-                                
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Dana Wallet',
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium,
-                                    ),
-                                    Text(
-                                      // formatNumber(
-                                      //   ((widget.countCntrler! *
-                                      //               (getJsonField(
-                                      //                     widget.roomData,
-                                      //                     r'''$.tmp_nights''',
-                                      //                   ) *
-                                      //                   double.parse(getJsonField(
-                                      //                     widget.roomData,
-                                      //                     r'''$.price_final''',
-                                      //                   ).toString()))) *
-                                      //           double.parse(
-                                      //               FFAppState().taxAdmin)) +
-                                      //       (widget.countCntrler! *
-                                      //           (getJsonField(
-                                      //                 widget.roomData,
-                                      //                 r'''$.tmp_nights''',
-                                      //               ) *
-                                      //               double.parse(getJsonField(
-                                      //                 widget.roomData,
-                                      //                 r'''$.price_final''',
-                                      //               ).toString()))),
-                                      //   formatType: FormatType.decimal,
-                                      //   decimalType: DecimalType.commaDecimal,
-                                      //   currency: 'Rp ',
-                                      // ),
-                                      '-${formatNumber(
-                                        
-                                            double.parse(widget.userData['user_wallet']
-                                                          ['balance'].toString()),
-                                        formatType: FormatType.decimal,
-                                        decimalType: DecimalType.commaDecimal,
-                                        currency: 'Rp ',
-                                      )}',
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium,
-                                    ),
-                                  ],
-                                ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Dana Wallet',
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleMedium,
+                                      ),
+                                      Text(
+                                        // formatNumber(
+                                        //   ((widget.countCntrler! *
+                                        //               (getJsonField(
+                                        //                     widget.roomData,
+                                        //                     r'''$.tmp_nights''',
+                                        //                   ) *
+                                        //                   double.parse(getJsonField(
+                                        //                     widget.roomData,
+                                        //                     r'''$.price_final''',
+                                        //                   ).toString()))) *
+                                        //           double.parse(
+                                        //               FFAppState().taxAdmin)) +
+                                        //       (widget.countCntrler! *
+                                        //           (getJsonField(
+                                        //                 widget.roomData,
+                                        //                 r'''$.tmp_nights''',
+                                        //               ) *
+                                        //               double.parse(getJsonField(
+                                        //                 widget.roomData,
+                                        //                 r'''$.price_final''',
+                                        //               ).toString()))),
+                                        //   formatType: FormatType.decimal,
+                                        //   decimalType: DecimalType.commaDecimal,
+                                        //   currency: 'Rp ',
+                                        // ),
+                                        '-${formatNumber(
+                                          double.parse(widget
+                                              .userData['user_wallet']
+                                                  ['balance']
+                                              .toString()),
+                                          formatType: FormatType.decimal,
+                                          decimalType: DecimalType.commaDecimal,
+                                          currency: 'Rp ',
+                                        )}',
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleMedium,
+                                      ),
+                                    ],
+                                  ),
                                 if (widget.userData['user_wallet'] != null)
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1068,7 +1067,8 @@ class _ReviewPesananWidgetState extends State<ReviewPesananWidget> {
                                         widget.roomData,
                                         r'''$.price''',
                                       ).toString(),
-                                      balance: widget.userData['user_wallet']['balance'],
+                                      balance: widget.userData['user_wallet']
+                                          ['balance'],
                                       totalPrice: _model.textController1.text
                                           .replaceAll('.0', ''),
                                       firstName: getJsonField(
@@ -1120,7 +1120,7 @@ class _ReviewPesananWidgetState extends State<ReviewPesananWidget> {
                                           ),
                                         ),
                                       );
-                                      print( _model.bookingRes!.jsonBody);
+                                      print(_model.bookingRes!.jsonBody);
                                     }
                                     setState(() {});
                                   },

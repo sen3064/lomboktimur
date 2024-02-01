@@ -196,7 +196,7 @@ class _ListWisataWidgetState extends State<ListWisataWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
                       child: Text(
-                        'Tempat Wisata Populer\ndi Kabupaten Kolaka',
+                        'Tempat Wisata Populer\ndi Kabupaten kelotimaja',
                         style: FlutterFlowTheme.of(context).titleLarge,
                       ),
                     ),

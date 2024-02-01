@@ -1,5 +1,5 @@
-import 'package:kolaka/core/constants/listBank.dart';
-import 'package:kolaka/core/helpers/currency_format.dart';
+import 'package:kelotimaja/core/constants/listBank.dart';
+import 'package:kelotimaja/core/helpers/currency_format.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
@@ -9,12 +9,12 @@ import 'package:get/get.dart';
 import 'package:expandable/expandable.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kolaka/components/reusable_appbar.dart';
-import 'package:kolaka/core/constants/storage.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_theme.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_widgets.dart';
-import 'package:kolaka/home/setting_profile/user_controller.dart';
+import 'package:kelotimaja/components/reusable_appbar.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_theme.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_widgets.dart';
+import 'package:kelotimaja/home/setting_profile/user_controller.dart';
 import 'package:intl/intl.dart';
 
 class RekeningScreen extends GetView<UserController> {
@@ -475,7 +475,7 @@ class RekeningScreen extends GetView<UserController> {
                                                                                             //   child: Text("Pilih Bank"),
                                                                                             // ),
                                                                                             itemAsString: (item) => item['channel_name'] as String,
-                                                                                            selectedItem: controller.selectedBankIndex!=null? listBank[controller.selectedBankIndex!] : null,
+                                                                                            selectedItem: controller.selectedBankIndex != null ? listBank[controller.selectedBankIndex!] : null,
                                                                                             onChanged: (value) {
                                                                                               print(value);
                                                                                             },

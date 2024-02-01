@@ -1,4 +1,4 @@
-name: kolaka
+name: kelotimaja
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -191,7 +191,7 @@ flutter:
     - assets/rive_animations/
     - assets/pdfs/
     - assets/category-icon/
-    - assets/images/loading_kolaka.png
+    - assets/images/loading_kelotimaja.png
 
 
   fonts:

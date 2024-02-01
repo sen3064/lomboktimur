@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:kolaka/core/constants/constant.dart';
-import 'package:kolaka/core/helpers/auth_helper.dart';
-import 'package:kolaka/core/services/api_client.dart';
-import 'package:kolaka/onboarding/auth_page/auth_page_widget.dart';
+import 'package:kelotimaja/core/constants/constant.dart';
+import 'package:kelotimaja/core/helpers/auth_helper.dart';
+import 'package:kelotimaja/core/services/api_client.dart';
+import 'package:kelotimaja/onboarding/auth_page/auth_page_widget.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
@@ -70,7 +70,7 @@ class _DaftarWidgetState extends State<DaftarWidget> {
       if (googleSignInAccount != null) {
         // Jika login berhasil, kirim data ke API
         var response = await http.post(
-          Uri.parse("https://user-api.kolaka.kabtour.com/v2/login-google"),
+          Uri.parse("https://user-api.kelotimaja.kabtour.com/v2/login-google"),
           body: {
             'email': googleSignInAccount.email,
             'name': googleSignInAccount.displayName,
@@ -115,7 +115,7 @@ class _DaftarWidgetState extends State<DaftarWidget> {
             };
             print('Param kirim: $params');
             chatAccount = await apiClient.post(
-                'https://chat.kolaka.kabtour.com/api_request/',
+                'https://chat.kelotimaja.kabtour.com/api_request/',
                 data: params);
             print('akun chat: $chatAccount');
             chatAccount = jsonDecode(chatAccount['body']);
@@ -755,7 +755,7 @@ class _DaftarWidgetState extends State<DaftarWidget> {
                                     };
                                     // print('Param kirim: $params');
                                     chatAccount = await apiClient.post(
-                                        'https://chat.kolaka.kabtour.com/api_request/',
+                                        'https://chat.kelotimaja.kabtour.com/api_request/',
                                         data: params);
                                     // print('akun chat: $chatAccount');
                                     chatAccount =

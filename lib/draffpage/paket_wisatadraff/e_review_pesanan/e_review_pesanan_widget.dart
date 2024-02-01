@@ -130,7 +130,7 @@ class _EReviewPesananWidgetState extends State<EReviewPesananWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Explore Kolaka',
+                                                'Explore kelotimaja',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge

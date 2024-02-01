@@ -1,9 +1,9 @@
-import 'package:kolaka/components/reusable_appbar.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_theme.dart';
+import 'package:kelotimaja/components/reusable_appbar.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/main.dart';
+import 'package:kelotimaja/main.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 
@@ -24,7 +24,7 @@ class WebViewScreen extends StatelessWidget {
           },
           onPageFinished: (String url) {
             debugPrint('Page finished loading: $url');
-            if (arguments['url'].startsWith('https://kolaka.kabtour.com')) {
+            if (arguments['url'].startsWith('https://kelotimaja.kabtour.com')) {
               wvc.runJavaScript('''
                 let topbar = document.getElementsByClassName("bravo_topbar");
                 let header = document.getElementsByClassName("bravo_header");
@@ -79,7 +79,7 @@ class WebViewScreen extends StatelessWidget {
         appBar: ReusableAppBar(
           title: '${arguments['title']}',
           onBack: () async {
-            await Get.to(() => NavBarPage(initialPage: 'Transaksi')); 
+            await Get.to(() => NavBarPage(initialPage: 'Transaksi'));
           },
         ),
         body: SafeArea(

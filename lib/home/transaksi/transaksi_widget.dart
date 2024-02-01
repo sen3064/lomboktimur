@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:kolaka/components/webview_screen.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_widgets.dart';
-import 'package:kolaka/transaksi/c_penginapanpesananditerima_transaksi/c_penginapanpesananditerima_transaksi_widget.dart';
+import 'package:kelotimaja/components/webview_screen.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_widgets.dart';
+import 'package:kelotimaja/transaksi/c_penginapanpesananditerima_transaksi/c_penginapanpesananditerima_transaksi_widget.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '/backend/api_requests/api_calls.dart';

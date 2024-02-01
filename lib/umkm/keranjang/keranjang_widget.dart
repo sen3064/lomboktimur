@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/index.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/index.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

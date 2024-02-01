@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:kolaka/index.dart';
-import 'package:kolaka/makanan/list_pencarian_makanan/list_pencarian_makanan_widget.dart';
+import 'package:kelotimaja/index.dart';
+import 'package:kelotimaja/makanan/list_pencarian_makanan/list_pencarian_makanan_widget.dart';
 
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -174,7 +174,7 @@ class _GantiPesananWidgetState extends State<GantiPesananWidget> {
                                 //   Get.off(() =>
                                 //      HomeMakananWidget());
                                 // }
-                                Get.off(()=>HomeMakananWidget());
+                                Get.off(() => HomeMakananWidget());
                               },
                               text: 'Iya, Ganti',
                               options: FFButtonOptions(

@@ -1,4 +1,4 @@
-package com.kabtour.kolaka
+package com.kabtour.kelotimaja
 
 import io.flutter.embedding.android.FlutterActivity
 

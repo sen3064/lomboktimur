@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/components/reusable_appbar.dart';
-import 'package:kolaka/core/controllers/auth_controller.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_theme.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_widgets.dart';
-import 'package:kolaka/home/setting_profile/user_controller.dart';
+import 'package:kelotimaja/components/reusable_appbar.dart';
+import 'package:kelotimaja/core/controllers/auth_controller.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_theme.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_widgets.dart';
+import 'package:kelotimaja/home/setting_profile/user_controller.dart';
 
 class VerificationWaitingScreen extends StatelessWidget {
   @override

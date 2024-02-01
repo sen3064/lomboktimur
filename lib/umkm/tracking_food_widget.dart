@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:kolaka/core/constants/storage.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/core/controllers/general_controller.dart';
-import 'package:kolaka/core/controllers/gps_controller.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_google_map.dart';
+import 'package:kelotimaja/core/controllers/general_controller.dart';
+import 'package:kelotimaja/core/controllers/gps_controller.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_google_map.dart';
 import 'package:location/location.dart';
 
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -99,16 +99,17 @@ class _TrackingFoodWidgetState extends State<TrackingFoodWidget> {
     // await BitmapDescriptor.fromAssetImage(ImageConfiguration.empty,
     //         "assets/images/marker/pin_destination.png")
     //     .then((icon) => destinationIcon = icon);
-    sourceIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration.empty, "assets/images/marker/food-package-icon-48.png");
+    sourceIcon = await BitmapDescriptor.fromAssetImage(ImageConfiguration.empty,
+        "assets/images/marker/food-package-icon-48.png");
     destinationIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration.empty, "assets/images/marker/pin_destination-48.png");
+        ImageConfiguration.empty,
+        "assets/images/marker/pin_destination-48.png");
   }
 
   Stream<LatLng> getCourierLocation() async* {
     print('get courier location start');
     var apiurl =
-        "https://api.kolaka.kabtour.com/v2/get-courier-location?courier_id=${widget.booking['courier_id']}";
+        "https://api.kelotimaja.kabtour.com/v2/get-courier-location?courier_id=${widget.booking['courier_id']}";
     try {
       print('try to get response');
       var response =

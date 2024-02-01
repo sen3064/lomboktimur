@@ -8,12 +8,12 @@ import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:kolaka/core/constants/constant.dart';
-import 'package:kolaka/core/constants/storage.dart';
-import 'package:kolaka/core/controllers/gps_controller.dart';
+import 'package:kelotimaja/core/constants/constant.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
+import 'package:kelotimaja/core/controllers/gps_controller.dart';
 
 class AddNewAddress extends StatefulWidget {
-  const AddNewAddress({Key? key}) : super(key: key); 
+  const AddNewAddress({Key? key}) : super(key: key);
 
   @override
   _AddNewAddressState createState() => _AddNewAddressState();
@@ -34,24 +34,72 @@ class _AddNewAddressState extends State<AddNewAddress> {
   BitmapDescriptor? customIcon;
   Set<Marker>? markers;
   double oldLatitude = Get.arguments['latitude'] ?? 0.0;
-  double oldLongitude = Get.arguments['longitude'] ?? 0.0; 
+  double oldLongitude = Get.arguments['longitude'] ?? 0.0;
 
   // int locationId = Get.arguments['object_data']['toko']['location_id'];
   int locationId = 73;
 
   Map<int, dynamic> listCoor = {
-    72: {"lat": -8.351896155732838, "long": 120.18779423257892, "zipcode": "14510"},
-    73: {"lat": -8.564261690890259, "long": 120.27913171842796, "zipcode": "14510"},
-    74: {"lat": -8.4686844248048, "long": 120.18480588745125, "zipcode": "14510"},
-    75: {"lat": -8.564261690890259, "long": 120.27913171842796, "zipcode": "14510"},
-    76: {"lat": -8.701056214281598, "long": 120.13615844838986, "zipcode": "14510"},
-    77: {"lat": -8.695918383431309, "long": 119.98349735332057, "zipcode": "14510"},
-    78: {"lat": -8.536930406937877, "long": 119.4846910456537, "zipcode": "14510"},
-    79: {"lat": -8.483984357949048, "long": 120.03295591245667, "zipcode": "14510"},
-    80: {"lat": -8.616919172510872, "long": 120.19870842826826, "zipcode": "14510"},
-    81: {"lat": -8.490968788658995, "long": 120.32883801927068, "zipcode": "14510"},
-    82: {"lat": -8.76650555370864, "long": 120.07994037779092, "zipcode": "14510"},
-    83: {"lat": -8.667681404271246, "long": 120.72198936058139, "zipcode": "14510"},
+    72: {
+      "lat": -8.351896155732838,
+      "long": 120.18779423257892,
+      "zipcode": "14510"
+    },
+    73: {
+      "lat": -8.564261690890259,
+      "long": 120.27913171842796,
+      "zipcode": "14510"
+    },
+    74: {
+      "lat": -8.4686844248048,
+      "long": 120.18480588745125,
+      "zipcode": "14510"
+    },
+    75: {
+      "lat": -8.564261690890259,
+      "long": 120.27913171842796,
+      "zipcode": "14510"
+    },
+    76: {
+      "lat": -8.701056214281598,
+      "long": 120.13615844838986,
+      "zipcode": "14510"
+    },
+    77: {
+      "lat": -8.695918383431309,
+      "long": 119.98349735332057,
+      "zipcode": "14510"
+    },
+    78: {
+      "lat": -8.536930406937877,
+      "long": 119.4846910456537,
+      "zipcode": "14510"
+    },
+    79: {
+      "lat": -8.483984357949048,
+      "long": 120.03295591245667,
+      "zipcode": "14510"
+    },
+    80: {
+      "lat": -8.616919172510872,
+      "long": 120.19870842826826,
+      "zipcode": "14510"
+    },
+    81: {
+      "lat": -8.490968788658995,
+      "long": 120.32883801927068,
+      "zipcode": "14510"
+    },
+    82: {
+      "lat": -8.76650555370864,
+      "long": 120.07994037779092,
+      "zipcode": "14510"
+    },
+    83: {
+      "lat": -8.667681404271246,
+      "long": 120.72198936058139,
+      "zipcode": "14510"
+    },
   };
 
   static const String _kLocationServicesDisabledMessage =
@@ -82,7 +130,8 @@ class _AddNewAddressState extends State<AddNewAddress> {
       // ImageConfiguration configuration =
       //     createLocalImageConfiguration(context, size: Size(48.0, 48.0));
       BitmapDescriptor.fromAssetImage(
-          const ImageConfiguration(size: Size(1, 1)), 'assets/images/custom_marker.png')
+              const ImageConfiguration(size: Size(1, 1)),
+              'assets/images/custom_marker.png')
           .then((icon) {
         customIcon = icon;
       });
@@ -107,7 +156,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
     AlertDialog alert = AlertDialog(
       title: const Text("Location Data Usage"),
       content: const Text(
-          "Kolaka collects location data to enable Transaction Feature while this application is in use."),
+          "kelotimaja collects location data to enable Transaction Feature while this application is in use."),
       actions: [
         okButton,
       ],
@@ -125,7 +174,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
     final position = await _getCurrentPosition();
     if (position != null) {
       List<Placemark> placemarks =
-      await placemarkFromCoordinates(position.latitude, position.longitude);
+          await placemarkFromCoordinates(position.latitude, position.longitude);
       log(jsonEncode(placemarks));
       log(jsonEncode(position));
       await localStorage.write('location', position);
@@ -137,8 +186,8 @@ class _AddNewAddressState extends State<AddNewAddress> {
     }
     // Timer(Duration(milliseconds: 60000), _getPosition);
     StreamSubscription<Position> positionStream =
-    Geolocator.getPositionStream(locationSettings: locationSettings)
-        .listen((Position position) {
+        Geolocator.getPositionStream(locationSettings: locationSettings)
+            .listen((Position position) {
       print(position == null
           ? 'Unknown'
           : '${position.latitude.toString()}, ${position.longitude.toString()}');
@@ -316,7 +365,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
         markers: markers!,
         onTap: (pos) async {
           List<Placemark> placemarks =
-          await placemarkFromCoordinates(pos.latitude, pos.longitude);
+              await placemarkFromCoordinates(pos.latitude, pos.longitude);
           print(placemarks[0]);
           result['line1'] = placemarks[0].street! +
               ', ' +
@@ -337,8 +386,8 @@ class _AddNewAddressState extends State<AddNewAddress> {
           print(pos);
           result['latitude'] = pos.latitude;
           result['longitude'] = pos.longitude;
-          Marker m =
-          Marker(markerId: const MarkerId('1'), icon: customIcon!, position: pos);
+          Marker m = Marker(
+              markerId: const MarkerId('1'), icon: customIcon!, position: pos);
           setState(() {
             markers!.add(m);
           });
@@ -347,7 +396,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
           Marker m = Marker(
               markerId: const MarkerId('1'),
               icon: customIcon!,
-              position: LatLng(_latitude,_longitude));
+              position: LatLng(_latitude, _longitude));
           setState(() {
             markers!.add(m);
           });
@@ -355,7 +404,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
         initialCameraPosition: CameraPosition(
             // target: LatLng(
             //     listCoor[locationId]['lat'], listCoor[locationId]['long']),
-            target: LatLng(_latitude,_longitude),
+            target: LatLng(_latitude, _longitude),
             zoom: 15),
       ),
     );

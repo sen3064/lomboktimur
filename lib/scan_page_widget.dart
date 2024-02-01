@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:kolaka/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

@@ -1,4 +1,4 @@
-import 'package:kolaka/makanan/detail_resto/detail_resto_widget.dart';
+import 'package:kelotimaja/makanan/detail_resto/detail_resto_widget.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -44,11 +44,11 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: RefreshIndicator(
-          onRefresh: () async {
-            print('refresh atas');
-            setState(() => _model.apiRequestCompleter = null);
-            await _model.waitForApiRequestCompleted();
-          },
+        onRefresh: () async {
+          print('refresh atas');
+          setState(() => _model.apiRequestCompleter = null);
+          await _model.waitForApiRequestCompleted();
+        },
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -106,8 +106,8 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                                   width: 50.0,
                                   height: 50.0,
                                   child: CircularProgressIndicator(
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary400,
+                                    color: FlutterFlowTheme.of(context)
+                                        .tertiary400,
                                   ),
                                 ),
                               );
@@ -115,13 +115,14 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                             final listViewGetMakananResponse = snapshot.data!;
                             return Builder(
                               builder: (context) {
-                                final dataMakanan =
-                                    listViewGetMakananResponse.jsonBody.toList();
+                                final dataMakanan = listViewGetMakananResponse
+                                    .jsonBody
+                                    .toList();
                                 return RefreshIndicator(
                                   onRefresh: () async {
                                     print('refresh bawah');
-                                    setState(
-                                        () => _model.apiRequestCompleter = null);
+                                    setState(() =>
+                                        _model.apiRequestCompleter = null);
                                     await _model.waitForApiRequestCompleted();
                                   },
                                   child: ListView.builder(
@@ -158,17 +159,20 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                                                     MaterialPageRoute(
                                                       builder: (context) =>
                                                           DetailRestoWidget(
-                                                        createUser: getJsonField(
+                                                        createUser:
+                                                            getJsonField(
                                                           dataMakananItem,
                                                           r'''$.create_user''',
                                                         ),
-                                                        dataToko: dataMakananItem,
+                                                        dataToko:
+                                                            dataMakananItem,
                                                       ),
                                                     ),
                                                   );
                                                 },
                                                 child: Row(
-                                                  mainAxisSize: MainAxisSize.max,
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
                                                   children: [
                                                     Container(
                                                       width: 100.0,
@@ -179,8 +183,8 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                                                                     context)
                                                                 .accent1,
                                                         borderRadius:
-                                                            BorderRadius.circular(
-                                                                16.0),
+                                                            BorderRadius
+                                                                .circular(16.0),
                                                       ),
                                                       child: Column(
                                                         mainAxisSize:
@@ -194,43 +198,44 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                                                                 BorderRadius
                                                                     .circular(
                                                                         16.0),
-                                                            child: dataMakananItem['banner'] !=
-                                                                              null &&
-                                                                          dataMakananItem['banner'] !=
-                                                                              ''
-                                                                      ? Image
+                                                            child: dataMakananItem[
+                                                                            'banner'] !=
+                                                                        null &&
+                                                                    dataMakananItem[
+                                                                            'banner'] !=
+                                                                        ''
+                                                                ? Image.network(
+                                                                    getJsonField(
+                                                                      dataMakananItem,
+                                                                      r'''$.banner''',
+                                                                    ),
+                                                                    height:
+                                                                        75.0,
+                                                                    fit: BoxFit
+                                                                        .cover,
+                                                                    errorBuilder:
+                                                                        (context,
+                                                                            error,
+                                                                            stackTrace) {
+                                                                      return Image
                                                                           .network(
-                                                                          getJsonField(
-                                                                            dataMakananItem,
-                                                                            r'''$.banner''',
-                                                                          ),
-                                                                          height:
-                                                                              75.0,
-                                                                          fit: BoxFit
-                                                                              .cover,
-                                                                          errorBuilder: (context,
-                                                                              error,
-                                                                              stackTrace) {
-                                                                            return Image
-                                                                                .network(
-                                                                              'https://cdn2.iconfinder.com/data/icons/building-vol-2/512/restaurant-512.png',
-                                                                              height:
-                                                                                  75.0,
-                                                                              fit:
-                                                                                  BoxFit.cover,
-                                                                            );
-                                                                          },
-                                                                        )
-                                                                      : Image
-                                                                          .network(
-                                                                          'https://cdn2.iconfinder.com/data/icons/building-vol-2/512/restaurant-512.png',
-                                                                          width: double
-                                                                              .infinity,
-                                                                          height:
-                                                                              75.0,
-                                                                          fit: BoxFit
-                                                                              .cover,
-                                                                        ),
+                                                                        'https://cdn2.iconfinder.com/data/icons/building-vol-2/512/restaurant-512.png',
+                                                                        height:
+                                                                            75.0,
+                                                                        fit: BoxFit
+                                                                            .cover,
+                                                                      );
+                                                                    },
+                                                                  )
+                                                                : Image.network(
+                                                                    'https://cdn2.iconfinder.com/data/icons/building-vol-2/512/restaurant-512.png',
+                                                                    width: double
+                                                                        .infinity,
+                                                                    height:
+                                                                        75.0,
+                                                                    fit: BoxFit
+                                                                        .cover,
+                                                                  ),
                                                           ),
                                                           Align(
                                                             alignment:
@@ -274,12 +279,10 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                                                                           .toString(),
                                                                       style:
                                                                           TextStyle(
-                                                                        color: FlutterFlowTheme.of(
-                                                                                context)
+                                                                        color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         fontWeight:
-                                                                            FontWeight
-                                                                                .w600,
+                                                                            FontWeight.w600,
                                                                         fontSize:
                                                                             12.0,
                                                                       ),
@@ -295,8 +298,11 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
-                                                              .fromSTEB(15.0, 0.0,
-                                                                  5.0, 0.0),
+                                                              .fromSTEB(
+                                                                  15.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -342,33 +348,26 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                                                                       .start,
                                                               children: [
                                                                 RichText(
-                                                                  text: TextSpan(
+                                                                  text:
+                                                                      TextSpan(
                                                                     children: [
                                                                       TextSpan(
-                                                                        text: '${getJsonField(dataMakananItem, r'''$.open_hour''')}'.replaceAll(
-                                                                                RegExp(
-                                                                                    r':00$'),
-                                                                                '') +
+                                                                        text: '${getJsonField(dataMakananItem, r'''$.open_hour''')}'.replaceAll(RegExp(r':00$'), '') +
                                                                             ' - ' +
-                                                                            '${getJsonField(dataMakananItem, r'''$.close_hour''')}'.replaceAll(
-                                                                                RegExp(r':00$'),
+                                                                            '${getJsonField(dataMakananItem, r'''$.close_hour''')}'.replaceAll(RegExp(r':00$'),
                                                                                 ''),
-                                                                        style: FlutterFlowTheme.of(
-                                                                                context)
+                                                                        style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily:
-                                                                                  FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              color:
-                                                                                  FlutterFlowTheme.of(context).secondary,
-                                                                              fontWeight:
-                                                                                  FontWeight.w500,
-                                                                              useGoogleFonts:
-                                                                                  GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              color: FlutterFlowTheme.of(context).secondary,
+                                                                              fontWeight: FontWeight.w500,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                       ),
                                                                       TextSpan(
-                                                                        text: '',
+                                                                        text:
+                                                                            '',
                                                                         style:
                                                                             TextStyle(),
                                                                       )
@@ -379,8 +378,8 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                          color: FlutterFlowTheme.of(context)
-                                                                              .secondary,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondary,
                                                                           useGoogleFonts:
                                                                               GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                         ),
@@ -406,27 +405,24 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                                                                       .start,
                                                               children: [
                                                                 RichText(
-                                                                  text: TextSpan(
+                                                                  text:
+                                                                      TextSpan(
                                                                     children: [
                                                                       TextSpan(
                                                                         text:
                                                                             '${(getJsonField(dataMakananItem, r'''$.address''') ?? '').substring(0, 15)}...',
-                                                                        style: FlutterFlowTheme.of(
-                                                                                context)
+                                                                        style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily:
-                                                                                  FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              color:
-                                                                                  FlutterFlowTheme.of(context).secondary,
-                                                                              fontWeight:
-                                                                                  FontWeight.w500,
-                                                                              useGoogleFonts:
-                                                                                  GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              color: FlutterFlowTheme.of(context).secondary,
+                                                                              fontWeight: FontWeight.w500,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                       ),
                                                                       TextSpan(
-                                                                        text: '',
+                                                                        text:
+                                                                            '',
                                                                         style:
                                                                             TextStyle(),
                                                                       )
@@ -437,8 +433,8 @@ class _ListRekomendasiWidgetState extends State<ListRekomendasiWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                          color: FlutterFlowTheme.of(context)
-                                                                              .secondary,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondary,
                                                                           useGoogleFonts:
                                                                               GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                         ),

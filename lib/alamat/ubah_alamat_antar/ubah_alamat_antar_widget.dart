@@ -4,8 +4,8 @@ import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:kolaka/alamat/ubah_alamat_antar/main_state.dart';
-import 'package:kolaka/core/constants/constant.dart';
+import 'package:kelotimaja/alamat/ubah_alamat_antar/main_state.dart';
+import 'package:kelotimaja/core/constants/constant.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -84,7 +84,7 @@ class _UbahAlamatAntarWidgetState extends State<UbahAlamatAntarWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
@@ -828,7 +828,8 @@ class _UbahAlamatAntarWidgetState extends State<UbahAlamatAntarWidget> {
                       highlightColor: Colors.transparent,
                       onTap: () async {
                         int newCheckboxValue = _model.checkboxValue! ? 1 : 0;
-                        String address = widget.userAddressData?['address'] ?? FFAppState().locationLatLng.toString();
+                        String address = widget.userAddressData?['address'] ??
+                            FFAppState().locationLatLng.toString();
 
                         print(widget.userAddressData);
                         _model.apiResult7ua =

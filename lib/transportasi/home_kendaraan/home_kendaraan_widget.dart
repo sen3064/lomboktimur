@@ -3,8 +3,8 @@ import 'dart:convert';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/theme.dart';
-import 'package:kolaka/transportasi/cari_kendaraan_widget.dart';
+import 'package:kelotimaja/theme.dart';
+import 'package:kelotimaja/transportasi/cari_kendaraan_widget.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../search_filter/cari_kendaraan.dart';
@@ -577,52 +577,52 @@ class _HomeKendaraanWidgetState extends State<HomeKendaraanWidget> {
                                                                 ],
                                                               ),
                                                             ),
-                                            //                 Padding(
-                                            //   padding: EdgeInsetsDirectional
-                                            //       .fromSTEB(
-                                            //           5.0, 5.0, 0.0, 0.0),
-                                            //   child: Row(
-                                            //     mainAxisSize:
-                                            //         MainAxisSize.max,
-                                            //     children: [
-                                            //       Padding(
-                                            //         padding:
-                                            //             EdgeInsetsDirectional
-                                            //                 .fromSTEB(
-                                            //                     0.0,
-                                            //                     0.0,
-                                            //                     5.0,
-                                            //                     0.0),
-                                            //         child: Icon(
-                                            //           Icons.location_on,
-                                            //           color: const Color
-                                            //                       .fromARGB(
-                                            //                       255,
-                                            //                       65,
-                                            //                       64,
-                                            //                       64),
-                                            //           size: 10.0,
-                                            //         ),
-                                            //       ),
-                                            //       Expanded(
-                                            //         child: Text(
-                                            //           '${(getJsonField(rentListItem, r'''$.seller.address''') ?? '').substring(0, 12)}...',
-                                            //           style: TextStyle(
-                                            //             color: const Color
-                                            //                       .fromARGB(
-                                            //                       255,
-                                            //                       65,
-                                            //                       64,
-                                            //                       64),
-                                            //             fontWeight:
-                                            //                 FontWeight.w400,
-                                            //             fontSize: 10.0,
-                                            //           ),
-                                            //         ),
-                                            //       ),
-                                            //     ],
-                                            //   ),
-                                            // ),
+                                                            //                 Padding(
+                                                            //   padding: EdgeInsetsDirectional
+                                                            //       .fromSTEB(
+                                                            //           5.0, 5.0, 0.0, 0.0),
+                                                            //   child: Row(
+                                                            //     mainAxisSize:
+                                                            //         MainAxisSize.max,
+                                                            //     children: [
+                                                            //       Padding(
+                                                            //         padding:
+                                                            //             EdgeInsetsDirectional
+                                                            //                 .fromSTEB(
+                                                            //                     0.0,
+                                                            //                     0.0,
+                                                            //                     5.0,
+                                                            //                     0.0),
+                                                            //         child: Icon(
+                                                            //           Icons.location_on,
+                                                            //           color: const Color
+                                                            //                       .fromARGB(
+                                                            //                       255,
+                                                            //                       65,
+                                                            //                       64,
+                                                            //                       64),
+                                                            //           size: 10.0,
+                                                            //         ),
+                                                            //       ),
+                                                            //       Expanded(
+                                                            //         child: Text(
+                                                            //           '${(getJsonField(rentListItem, r'''$.seller.address''') ?? '').substring(0, 12)}...',
+                                                            //           style: TextStyle(
+                                                            //             color: const Color
+                                                            //                       .fromARGB(
+                                                            //                       255,
+                                                            //                       65,
+                                                            //                       64,
+                                                            //                       64),
+                                                            //             fontWeight:
+                                                            //                 FontWeight.w400,
+                                                            //             fontSize: 10.0,
+                                                            //           ),
+                                                            //         ),
+                                                            //       ),
+                                                            //     ],
+                                                            //   ),
+                                                            // ),
                                                             Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional

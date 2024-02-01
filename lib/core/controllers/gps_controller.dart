@@ -4,11 +4,11 @@ import 'dart:developer';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:kolaka/core/constants/storage.dart';
-import 'package:kolaka/core/services/gps_service.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
+import 'package:kelotimaja/core/services/gps_service.dart';
 
 class GPSController extends GetxController {
-  final title = 'Mitra Kolaka';
+  final title = 'Mitra kelotimaja';
   // final MapController mapController = MapController();
   List<Marker> markers = [];
   var isRunning = false.obs,

@@ -1,4 +1,4 @@
-import 'package:kolaka/backend/api_requests/api_manager.dart';
+import 'package:kelotimaja/backend/api_requests/api_manager.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

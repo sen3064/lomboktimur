@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/makanan/detail_resto/detail_resto_widget.dart';
-import 'package:kolaka/penginapan/detail_penginapan/detail_penginapan_widget.dart';
-import 'package:kolaka/penginapan/list_penginapan/list_penginapan_widget.dart';
-import 'package:kolaka/transportasi/detail_transpotasi_mobil/detail_transpotasi_mobil_widget.dart';
+import 'package:kelotimaja/makanan/detail_resto/detail_resto_widget.dart';
+import 'package:kelotimaja/penginapan/detail_penginapan/detail_penginapan_widget.dart';
+import 'package:kelotimaja/penginapan/list_penginapan/list_penginapan_widget.dart';
+import 'package:kelotimaja/transportasi/detail_transpotasi_mobil/detail_transpotasi_mobil_widget.dart';
 import 'dart:convert';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:http/http.dart' as http;
-import 'package:kolaka/flutter_flow/flutter_flow_util.dart';
-import 'package:kolaka/theme.dart';
-import 'package:kolaka/tiket_wisata/beli_tiket_wisata/beli_tiket_wisata_widget.dart';
-import 'package:kolaka/umkm/detail_produk_food/detail_produk_food_widget.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_util.dart';
+import 'package:kelotimaja/theme.dart';
+import 'package:kelotimaja/tiket_wisata/beli_tiket_wisata/beli_tiket_wisata_widget.dart';
+import 'package:kelotimaja/umkm/detail_produk_food/detail_produk_food_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -296,7 +296,7 @@ class _SearchPageState extends State<SearchPage> {
 
   Future<List<SearchResult>?> _search(String query) async {
     String apiUrl =
-        'https://api.kolaka.kabtour.com/v2/keyword-search?keyword=$query';
+        'https://api.kelotimaja.kabtour.com/v2/keyword-search?keyword=$query';
 
     try {
       final response = await http.get(Uri.parse(apiUrl));

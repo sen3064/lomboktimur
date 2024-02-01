@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "389473669911",
-    "project_id": "kolaka-81a59",
-    "storage_bucket": "kolaka-81a59.appspot.com"
+    "project_id": "kelotimaja-81a59",
+    "storage_bucket": "kelotimaja-81a59.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:389473669911:android:203c2524502da0b9badd52",
         "android_client_info": {
-          "package_name": "com.kabtour.kolaka"
+          "package_name": "com.kabtour.kelotimaja"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "389473669911-bes6qhme8fe2mfboel4t1r2ag7mhnpl1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.kabtour.kolaka",
+            "package_name": "com.kabtour.kelotimaja",
             "certificate_hash": "ade6f5eecc0b3ade982d341c2d8a467469f72b48"
           }
         },
@@ -25,7 +25,7 @@
           "client_id": "389473669911-haaf7oilfbr8g7suvjiabtop582m4qvm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.kabtour.kolaka",
+            "package_name": "com.kabtour.kelotimaja",
             "certificate_hash": "a3c090883f6eac07ff58a31783d3d60af088cbad"
           }
         },
@@ -50,7 +50,7 @@
               "client_id": "389473669911-lbgnpr3iqsbkdhn4nqro9bkme5rtv8ak.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.kabtour.kolaka"
+                "bundle_id": "com.kabtour.kelotimaja"
               }
             }
           ]

@@ -129,7 +129,7 @@ class _ListEventWidgetState extends State<ListEventWidget> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          'Event Populer\ndi Kabupaten Kolaka',
+                          'Event Populer\ndi Kabupaten kelotimaja',
                           style: FlutterFlowTheme.of(context).titleLarge,
                         ),
                       ],
@@ -260,38 +260,40 @@ class _ListEventWidgetState extends State<ListEventWidget> {
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   if (getJsonField(
-                                                    listEventItem,
-                                                    r'''$.banner''',
-                                                  ) != null)
-                                                  ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8),
-                                                    child: Image.network(
-                                                      getJsonField(
                                                         listEventItem,
                                                         r'''$.banner''',
-                                                      )['400x350'],
-                                                      width: double.infinity,
-                                                      height: 160,
-                                                      fit: BoxFit.cover,
+                                                      ) !=
+                                                      null)
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
+                                                      child: Image.network(
+                                                        getJsonField(
+                                                          listEventItem,
+                                                          r'''$.banner''',
+                                                        )['400x350'],
+                                                        width: double.infinity,
+                                                        height: 160,
+                                                        fit: BoxFit.cover,
+                                                      ),
                                                     ),
-                                                  ),
-
                                                   if (getJsonField(
-                                                    listEventItem,
-                                                    r'''$.banner''',
-                                                  ) == null)
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                child: Image.network(
-                                                  "https://wallpapercave.com/wp/wp7488372.jpg",
-                                                  width: 200,
-                                                  height: 200,
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
+                                                        listEventItem,
+                                                        r'''$.banner''',
+                                                      ) ==
+                                                      null)
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
+                                                      child: Image.network(
+                                                        "https://wallpapercave.com/wp/wp7488372.jpg",
+                                                        width: 200,
+                                                        height: 200,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
@@ -304,59 +306,59 @@ class _ListEventWidgetState extends State<ListEventWidget> {
                                                           MainAxisAlignment
                                                               .spaceBetween,
                                                       children: [
-                                                         if (getJsonField(
-                                                    listEventItem,
-                                                    r'''$.title''',
-                                                  ) != null)
-                                                        Expanded(
-                                                          child: Text(
-                                                            getJsonField(
+                                                        if (getJsonField(
                                                               listEventItem,
                                                               r'''$.title''',
+                                                            ) !=
+                                                            null)
+                                                          Expanded(
+                                                            child: Text(
+                                                              getJsonField(
+                                                                listEventItem,
+                                                                r'''$.title''',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyLargeFamily,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                  ),
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLargeFamily,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyLargeFamily),
-                                                                ),
                                                           ),
-                                                        ),
                                                         if (getJsonField(
-                                                    listEventItem,
-                                                    r'''$.title''',
-                                                  ) == null)
-                                                        Expanded(
-                                                          child: Text(
-                                                            'Tiket Wisata Kolaka',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLargeFamily,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyLargeFamily),
-                                                                ),
+                                                              listEventItem,
+                                                              r'''$.title''',
+                                                            ) ==
+                                                            null)
+                                                          Expanded(
+                                                            child: Text(
+                                                              'Tiket Wisata kelotimaja',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyLargeFamily,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                  ),
+                                                            ),
                                                           ),
-                                                        ),
                                                         FFButtonWidget(
                                                           onPressed: () {
                                                             print(

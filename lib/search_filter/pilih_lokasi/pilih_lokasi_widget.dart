@@ -1,5 +1,5 @@
-import 'package:kolaka/search_filter/search_result/search_list_tour_widget.dart';
-import 'package:kolaka/search_filter/search_result/search_result_widget.dart';
+import 'package:kelotimaja/search_filter/search_result/search_list_tour_widget.dart';
+import 'package:kelotimaja/search_filter/search_result/search_result_widget.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

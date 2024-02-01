@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:kolaka/makanan/detail_resto/detail_resto_widget.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/makanan/detail_resto/detail_resto_widget.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/components/pilih_tanggal_pesan_widget.dart';
 import '/components/wishlist_widget.dart';
@@ -145,14 +145,15 @@ class _ListPencarianMakananWidgetState
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                Get.to(() => DetailRestoWidget(
-                                      createUser: getJsonField(
-                                          listMakananTokoItem,
-                                          r'''$.create_user'''),
-                                      dataToko: listMakananTokoItem['seller'],
-                                    ),arguments: {
-                                                'dataPage':'search'
-                                              },);
+                                Get.to(
+                                  () => DetailRestoWidget(
+                                    createUser: getJsonField(
+                                        listMakananTokoItem,
+                                        r'''$.create_user'''),
+                                    dataToko: listMakananTokoItem['seller'],
+                                  ),
+                                  arguments: {'dataPage': 'search'},
+                                );
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,

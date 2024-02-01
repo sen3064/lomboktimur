@@ -1,4 +1,4 @@
-import 'package:kolaka/transportasi/list_kendaraan_motor/list_kendaraan_motor_widget.dart';
+import 'package:kelotimaja/transportasi/list_kendaraan_motor/list_kendaraan_motor_widget.dart';
 
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';

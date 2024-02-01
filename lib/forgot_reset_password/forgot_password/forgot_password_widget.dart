@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:kolaka/backend/api_requests/api_calls.dart';
-import 'package:kolaka/forgot_reset_password/verify_code/verify_code_forgot_widget.dart';
-import 'package:kolaka/index.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/forgot_reset_password/verify_code/verify_code_forgot_widget.dart';
+import 'package:kelotimaja/index.dart';
 
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

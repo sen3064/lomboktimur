@@ -1,15 +1,15 @@
-import 'package:kolaka/core/constants/listBank.dart';
+import 'package:kelotimaja/core/constants/listBank.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/core/constants/storage.dart';
-import 'package:kolaka/core/constants/subdomain.dart';
-import 'package:kolaka/core/controllers/auth_controller.dart';
-import 'package:kolaka/core/services/api_client.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_util.dart';
-import 'package:kolaka/flutter_flow/form_field_controller.dart';
-import 'package:kolaka/home/setting_profile/verification/verification_waiting_screen.dart';
-// import 'package:kolaka/modules/welcome/welcome_screen.dart';
-import 'package:kolaka/signup_signin_setup/login_page/login_page_widget.dart';
+import 'package:kelotimaja/core/constants/storage.dart';
+import 'package:kelotimaja/core/constants/subdomain.dart';
+import 'package:kelotimaja/core/controllers/auth_controller.dart';
+import 'package:kelotimaja/core/services/api_client.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_util.dart';
+import 'package:kelotimaja/flutter_flow/form_field_controller.dart';
+import 'package:kelotimaja/home/setting_profile/verification/verification_waiting_screen.dart';
+// import 'package:kelotimaja/modules/welcome/welcome_screen.dart';
+import 'package:kelotimaja/signup_signin_setup/login_page/login_page_widget.dart';
 
 class UserController extends GetxController {
   ApiClient apiClient = Get.find<ApiClient>();
@@ -92,7 +92,7 @@ class UserController extends GetxController {
   FFUploadedFile uploadedLocalFile6 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String docImage = '';
-  
+
   TextEditingController noRek = TextEditingController();
   TextEditingController namaRek = TextEditingController();
   String selectedBank = '';
@@ -150,20 +150,22 @@ class UserController extends GetxController {
     bool res = await authController.refreshUserData();
     // refreshed(await authController.refreshUserData());
     refreshed(res);
-    Map<String, dynamic> userRekening = FFAppState().userData['user_rekening'] ?? {};
-    if(userRekening.isNotEmpty){
+    Map<String, dynamic> userRekening =
+        FFAppState().userData['user_rekening'] ?? {};
+    if (userRekening.isNotEmpty) {
       hasRekening(true);
     }
     isLoading(false);
   }
 
-  void initRekening(){
+  void initRekening() {
     var userRekening = FFAppState().userData['user_rekening'];
     noRek.text = userRekening['no_rek'];
     namaRek.text = userRekening['name_rek'];
     selectedBank = userRekening['name_bank'];
-    selectedBankIndex = listBank.indexWhere((element) => element['channel_code'] == userRekening['bank_code']);
-    if(selectedBankIndex == -1){
+    selectedBankIndex = listBank.indexWhere(
+        (element) => element['channel_code'] == userRekening['bank_code']);
+    if (selectedBankIndex == -1) {
       selectedBankIndex = null;
     }
     update();
@@ -257,7 +259,7 @@ class UserController extends GetxController {
             orElse: () => {"val": ""})['val'];
         print('npwp img from meta');
         npwpImage =
-            'https://user-api.kolaka.kabtour.com/storage/private/${jsonDecode(userMeta.firstWhere((item) => item['name'] == 'verify_data_npwp_card', orElse: () => {
+            'https://user-api.kelotimaja.kabtour.com/storage/private/${jsonDecode(userMeta.firstWhere((item) => item['name'] == 'verify_data_npwp_card', orElse: () => {
                   "val": ""
                 })['val'])['path']}';
       }
@@ -267,7 +269,7 @@ class UserController extends GetxController {
           orElse: () => {"val": ""})['val'];
       print('ktp img from meta');
       ktpImage =
-          'https://user-api.kolaka.kabtour.com/storage/private/${jsonDecode(userMeta.firstWhere((item) => item['name'] == 'verify_data_id_card', orElse: () => {
+          'https://user-api.kelotimaja.kabtour.com/storage/private/${jsonDecode(userMeta.firstWhere((item) => item['name'] == 'verify_data_id_card', orElse: () => {
                 "val": ""
               })['val'])['path']}';
       if (roleId == 1) {
@@ -281,7 +283,7 @@ class UserController extends GetxController {
         print('tlval : $tlval');
         if (tlval.isNotEmpty) {
           docImage =
-              'https://user-api.kolaka.kabtour.com/storage/private/${tlval[0]['path']}';
+              'https://user-api.kelotimaja.kabtour.com/storage/private/${tlval[0]['path']}';
         }
       }
       if (roleId == 7 || roleId == 9) {
@@ -289,14 +291,14 @@ class UserController extends GetxController {
             (item) => item['name'] == 'verify_data_tdp',
             orElse: () => {"val": ""})['val'];
         tdpImage =
-            'https://user-api.kolaka.kabtour.com/storage/private/${jsonDecode(userMeta.firstWhere((item) => item['name'] == 'verify_data_tdp_document', orElse: () => {
+            'https://user-api.kelotimaja.kabtour.com/storage/private/${jsonDecode(userMeta.firstWhere((item) => item['name'] == 'verify_data_tdp_document', orElse: () => {
                   "val": ""
                 })['val'])['path']}';
         nomorSiupController.text = userMeta.firstWhere(
             (item) => item['name'] == 'verify_data_siup',
             orElse: () => {"val": ""})['val'];
         siupImage =
-            'https://user-api.kolaka.kabtour.com/storage/private/${jsonDecode(userMeta.firstWhere((item) => item['name'] == 'verify_data_siup_document', orElse: () => {
+            'https://user-api.kelotimaja.kabtour.com/storage/private/${jsonDecode(userMeta.firstWhere((item) => item['name'] == 'verify_data_siup_document', orElse: () => {
                   "val": ""
                 })['val'])['path']}';
       }
@@ -305,7 +307,7 @@ class UserController extends GetxController {
             (item) => item['name'] == 'verify_data_driving_license',
             orElse: () => {"val": ""})['val'];
         simImage =
-            'https://user-api.kolaka.kabtour.com/storage/private/${jsonDecode(userMeta.firstWhere((item) => item['name'] == 'verify_data_driving_license_card', orElse: () => {
+            'https://user-api.kelotimaja.kabtour.com/storage/private/${jsonDecode(userMeta.firstWhere((item) => item['name'] == 'verify_data_driving_license_card', orElse: () => {
                   "val": ""
                 })['val'])['path']}';
       }
@@ -408,7 +410,7 @@ class UserController extends GetxController {
     return {};
   }
 
-  clearRekeningParam(){
+  clearRekeningParam() {
     noRek.clear();
     refreshed(false);
     update();

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:kolaka/makanan/detail_resto/detail_resto_widget.dart';
+import 'package:kelotimaja/makanan/detail_resto/detail_resto_widget.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/components/buy_item_widget.dart';

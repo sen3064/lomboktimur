@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:kolaka/components/ubah_data_booking_backup_widget.dart';
+import 'package:kelotimaja/components/ubah_data_booking_backup_widget.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

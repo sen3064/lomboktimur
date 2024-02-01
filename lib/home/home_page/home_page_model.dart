@@ -1,4 +1,4 @@
-import 'package:kolaka/backend/api_requests/api_manager.dart';
+import 'package:kelotimaja/backend/api_requests/api_manager.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/instant_timer.dart';

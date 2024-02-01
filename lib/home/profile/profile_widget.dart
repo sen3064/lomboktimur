@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:get/get.dart';
-import 'package:kolaka/backend/api_requests/api_calls.dart';
-import 'package:kolaka/backend/api_requests/api_manager.dart';
-import 'package:kolaka/index.dart';
-import 'package:kolaka/signup_signin_setup/login_page/login_page_widget.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/backend/api_requests/api_calls.dart';
+import 'package:kelotimaja/backend/api_requests/api_manager.dart';
+import 'package:kelotimaja/index.dart';
+import 'package:kelotimaja/signup_signin_setup/login_page/login_page_widget.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -21,8 +21,8 @@ export 'profile_model.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as path;
-import 'package:kolaka/flutter_flow/upload_data.dart';
-import 'package:kolaka/flutter_flow/uploaded_file.dart';
+import 'package:kelotimaja/flutter_flow/upload_data.dart';
+import 'package:kelotimaja/flutter_flow/uploaded_file.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:flutter/cupertino.dart'; ini model scroll

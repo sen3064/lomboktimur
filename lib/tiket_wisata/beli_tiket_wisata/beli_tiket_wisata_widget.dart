@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:kolaka/flutter_flow/flutter_flow_google_map.dart';
-import 'package:kolaka/tiket_wisata/detail_pesanan_wisata/detail_pesanan_wisata_widget.dart';
+import 'package:kelotimaja/flutter_flow/flutter_flow_google_map.dart';
+import 'package:kelotimaja/tiket_wisata/detail_pesanan_wisata/detail_pesanan_wisata_widget.dart';
 
 import '../../theme.dart';
 import '/components/penukaran_tiket_widget.dart';
@@ -334,7 +334,6 @@ class _BeliTiketWisataWidgetState extends State<BeliTiketWisataWidget> {
                                     ),
                                     style: regular10.copyWith(color: dark2),
                                   ),
-                                  
                                 ],
                               ),
                             ),

@@ -1,4 +1,4 @@
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/components/fasilitas_penginapan_widget.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -1147,7 +1147,7 @@ class _DetailPenginapanWidgetState extends State<DetailPenginapanWidget> {
                                 shape: BoxShape.circle,
                               ),
                               child: Image.network(
-                                'https://cdn.kolaka.kabtour.com/storage/user/avatar.png',
+                                'https://cdn.kelotimaja.kabtour.com/storage/user/avatar.png',
                                 fit: BoxFit.cover,
                               ),
                             ),

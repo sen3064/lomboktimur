@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/makanan/services/product_service.dart';
-import 'package:kolaka/signup_signin_setup/login_page/login_page_widget.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/makanan/services/product_service.dart';
+import 'package:kelotimaja/signup_signin_setup/login_page/login_page_widget.dart';
 
 import '/components/varian_umkm_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

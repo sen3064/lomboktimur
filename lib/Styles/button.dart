@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/theme.dart';
 
 // Gaya tombol pertama (buttonPrimary)
 final ButtonStyle buttonPrimary = ElevatedButton.styleFrom(

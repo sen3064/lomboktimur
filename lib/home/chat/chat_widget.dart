@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/components/reusable_appbar.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/main.dart';
-import 'package:kolaka/signup_signin_setup/login_page/login_page_widget.dart';
+import 'package:kelotimaja/components/reusable_appbar.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/main.dart';
+import 'package:kelotimaja/signup_signin_setup/login_page/login_page_widget.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
@@ -128,7 +128,7 @@ class _ChatWidgetState extends State<ChatWidget> {
       )
       ..loadRequest(Get.arguments != null
           ? Uri.parse(
-              "https://chat.kolaka.kabtour.com/${Get.arguments["to_username"]}/chat")
+              "https://chat.kelotimaja.kabtour.com/${Get.arguments["to_username"]}/chat")
           : Uri.parse(chatAccount['auto_login_url']));
     // #docregion platform_features
     if (controller.platform is AndroidWebViewController) {
@@ -230,8 +230,8 @@ class _ChatWidgetState extends State<ChatWidget> {
     String? currentUrl = await wvc.currentUrl();
     print('current url : $currentUrl');
     print(await wvc.canGoBack());
-    if (currentUrl == 'https://chat.kolaka.kabtour.com/#' ||
-        currentUrl == 'https://chat.kolaka.kabtour.com') {
+    if (currentUrl == 'https://chat.kelotimaja.kabtour.com/#' ||
+        currentUrl == 'https://chat.kelotimaja.kabtour.com') {
       Get.off(() => NavBarPage(
             initialPage: 'Home_Page',
           ));

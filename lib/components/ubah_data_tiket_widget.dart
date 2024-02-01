@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:kolaka/index.dart';
-import 'package:kolaka/search_filter/cari_lokasi_tiket/cari_lokasi_tiket_widget.dart';
-import 'package:kolaka/sf_calendar/sf_calendar_tiket_widget.dart';
-import 'package:kolaka/tiket_wisata/list_tiket_wisata/list_tiket_wisata_widget.dart';
+import 'package:kelotimaja/index.dart';
+import 'package:kelotimaja/search_filter/cari_lokasi_tiket/cari_lokasi_tiket_widget.dart';
+import 'package:kelotimaja/sf_calendar/sf_calendar_tiket_widget.dart';
+import 'package:kelotimaja/tiket_wisata/list_tiket_wisata/list_tiket_wisata_widget.dart';
 
 import '/components/kamar_tamu_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

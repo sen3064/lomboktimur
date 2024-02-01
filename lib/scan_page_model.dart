@@ -1,5 +1,5 @@
-import 'package:kolaka/backend/api_requests/api_manager.dart';
-import 'package:kolaka/scan_page_widget.dart';
+import 'package:kelotimaja/backend/api_requests/api_manager.dart';
+import 'package:kelotimaja/scan_page_widget.dart';
 
 // import '/components/popupsetelahisidatascan_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

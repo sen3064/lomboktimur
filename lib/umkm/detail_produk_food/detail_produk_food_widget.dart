@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/core/helpers/common_helper.dart';
-import 'package:kolaka/home/chat/chat_widget.dart';
-import 'package:kolaka/makanan/home_makanan/home_makanan_widget.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/core/helpers/common_helper.dart';
+import 'package:kelotimaja/home/chat/chat_widget.dart';
+import 'package:kelotimaja/makanan/home_makanan/home_makanan_widget.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '/components/varian_produk_u_m_k_m_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
@@ -875,7 +875,8 @@ class _DetailProdukFoodWidgetState extends State<DetailProdukFoodWidget> {
                                               ),
                                               Text(
                                                 'Lokasi',
-                                                style: regular14.copyWith(color: dark2),
+                                                style: regular14.copyWith(
+                                                    color: dark2),
                                               )
                                             ],
                                           ),
@@ -929,7 +930,8 @@ class _DetailProdukFoodWidgetState extends State<DetailProdukFoodWidget> {
                                                 ),
                                                 Text(
                                                   '${getJsonField(widget.umkmData, r'''$.location_name''')}',
-                                                  style: semibold12_5.copyWith(color: dark1),
+                                                  style: semibold12_5.copyWith(
+                                                      color: dark1),
                                                 )
                                               ],
                                             ),
@@ -1234,7 +1236,8 @@ class _DetailProdukFoodWidgetState extends State<DetailProdukFoodWidget> {
                                     ),
                                     child: Icon(
                                       Icons.wechat_outlined,
-                                      color: FlutterFlowTheme.of(context).accent1,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent1,
                                       size: 24,
                                     ),
                                   ),

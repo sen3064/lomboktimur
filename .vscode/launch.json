@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "kolaka-wisatawan",
+            "name": "kelotimaja-wisatawan",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "kolaka-wisatawan (profile mode)",
+            "name": "kelotimaja-wisatawan (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "kolaka-wisatawan (release mode)",
+            "name": "kelotimaja-wisatawan (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

@@ -1,4 +1,4 @@
-import 'package:kolaka/index.dart';
+import 'package:kelotimaja/index.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
-import 'package:kolaka/core/controllers/auth_controller.dart';
+import 'package:kelotimaja/core/controllers/auth_controller.dart';
 import 'verify_code_model.dart';
 export 'verify_code_model.dart';
 

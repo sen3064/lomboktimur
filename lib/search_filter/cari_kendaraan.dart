@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kolaka/search_filter/list_kendaraan.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/search_filter/list_kendaraan.dart';
+import 'package:kelotimaja/theme.dart';
 
 void main() {
   runApp(MyApp());

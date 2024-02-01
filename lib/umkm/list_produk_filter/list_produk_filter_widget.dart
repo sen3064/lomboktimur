@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:kolaka/search_filter/search_produk/search_produk_widget.dart';
-import 'package:kolaka/theme.dart';
+import 'package:kelotimaja/search_filter/search_produk/search_produk_widget.dart';
+import 'package:kelotimaja/theme.dart';
 
 import '../detail_produk_food/detail_produk_food_widget.dart';
 import '../keranjang/keranjang_widget.dart';
@@ -638,54 +638,40 @@ class _ListProdukFilterWidgetState extends State<ListProdukFilterWidget> {
                                           ),
                                         ),
                                         Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      5.0, 5.0, 0.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize:
-                                                    MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0.0,
-                                                                0.0,
-                                                                5.0,
-                                                                0.0),
-                                                    child: Icon(
-                                                      Icons.location_on,
-                                                      color: const Color
-                                                                  .fromARGB(
-                                                                  255,
-                                                                  65,
-                                                                  64,
-                                                                  64),
-                                                      size: 10.0,
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Text(
-                                                      getJsonField(
-                                                        listUmkmItem,
-                                                        r'''$.location_name''',
-                                                      ).toString(),
-                                                      style: TextStyle(
-                                                        color: const Color
-                                                                  .fromARGB(
-                                                                  255,
-                                                                  65,
-                                                                  64,
-                                                                  64),
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        fontSize: 10.0,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 5.0, 0.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: Icon(
+                                                  Icons.location_on,
+                                                  color: const Color.fromARGB(
+                                                      255, 65, 64, 64),
+                                                  size: 10.0,
+                                                ),
                                               ),
-                                            ),
+                                              Expanded(
+                                                child: Text(
+                                                  getJsonField(
+                                                    listUmkmItem,
+                                                    r'''$.location_name''',
+                                                  ).toString(),
+                                                  style: TextStyle(
+                                                    color: const Color.fromARGB(
+                                                        255, 65, 64, 64),
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 10.0,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                         SizedBox(
                                           height: 10,
                                         ),
