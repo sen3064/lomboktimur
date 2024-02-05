@@ -213,15 +213,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Align(
-                          alignment: AlignmentDirectional(0, 0),
-                          child: Text(
-                            'Kelotimaja',
-                            style: FlutterFlowTheme.of(context).displaySmall,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            'assets/images/logolotim1.png',
+                            width: 250,
+                            height: 90,
+                            fit: BoxFit.cover,
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 30),
                           child: Text(
                             'Selamat Datang\ndi aplikasi wisata Kabupaten Lombok Timur',
                             textAlign: TextAlign.center,
@@ -575,7 +577,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   alignment: AlignmentDirectional(0, 0),
                                   child: Container(
                                     width: 120,
-                                    height: 32,
+                                    height: 20,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
