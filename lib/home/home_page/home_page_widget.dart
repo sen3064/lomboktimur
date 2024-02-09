@@ -1022,220 +1022,693 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: Row(
                         children: [
-                          FutureBuilder<ApiCallResponse>(
-                            future: TiketWisataGroup.getTiketWisataCall.call(),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                    child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    children: [
-                                      loadingCard(),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      loadingCard(),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      loadingCard(),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      loadingCard(),
-                                    ],
-                                  ),
-                                ));
-                              }
-                              final listViewTourListResponse = snapshot.data!;
-                              return Builder(
-                                builder: (context) {
-                                  final jsonBody =
-                                      listViewTourListResponse.jsonBody;
-                                  if (jsonBody == null) {
-                                    // Handle the case when jsonBody is null (e.g., show an error message)
-                                    return Center(
-                                      child: Text("koneksi tidak stabil"),
-                                    );
-                                  }
-                                  final tempatWisata =
-                                      TiketWisataGroup.getTiketWisataCall
-                                              .dataTiket(
-                                                listViewTourListResponse
-                                                    .jsonBody,
-                                              )
-                                              ?.toList() ??
-                                          [];
-                                  final filteredTempatWisata =
-                                      tempatWisata.where((item) {
-                                    final price =
-                                        double.tryParse(item['price'] ?? "0");
-                                    return price != null && price != 0.0;
-                                  }).toList();
-                                  return ListView.builder(
-                                    padding: EdgeInsets.zero,
-                                    primary: false,
-                                    shrinkWrap: true,
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount: filteredTempatWisata.length,
-                                    itemBuilder:
-                                        (context, filteredTempatWisataIndex) {
-                                      final filteredTempatWisataItem =
-                                          filteredTempatWisata[
-                                              filteredTempatWisataIndex];
-                                      return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 10, 0),
-                                        child: Container(
-                                          width: 160,
-                                          height: 100,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .accent1,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4,
-                                                color: Color(0x33000000),
-                                                offset: Offset(0, 2),
-                                              )
-                                            ],
-                                            borderRadius:
-                                                BorderRadius.circular(7),
+                          // Generated code for this ListView Widget...
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                            child: ListView(
+                              padding: EdgeInsets.zero,
+                              primary: false,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 10, 0),
+                                  child: Container(
+                                    width: 160,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).accent1,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 4,
+                                          color: Color(0x33000000),
+                                          offset: Offset(0, 2),
+                                        )
+                                      ],
+                                      borderRadius: BorderRadius.circular(7),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(7),
+                                          child: Image.asset(
+                                            'assets/images/611e162fed8b4.jpg',
+                                            width: double.infinity,
+                                            height: double.infinity,
+                                            fit: BoxFit.cover,
                                           ),
-                                          child: Stack(
+                                        ),
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            // Navigator.push(
+                                            //   context,
+                                            //   MaterialPageRoute(
+                                            //     builder: (context) => DetailWisataWidget(),
+                                            //   ),
+                                            // );
+                                          },
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(7),
-                                                child: Image.network(
-                                                  getJsonField(
-                                                    filteredTempatWisataItem,
-                                                    r'''$.banner''',
-                                                  )["400x350"],
-                                                  width: double.infinity,
-                                                  height: double.infinity,
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                              InkWell(
-                                                onTap: () async {
-                                                  DateTime? startDate =
-                                                      FFAppState().startDate;
-
-                                                  String formattedStartDate =
-                                                      startDate != null
-                                                          ? DateFormat(
-                                                                  'yyyy-MM-dd')
-                                                              .format(startDate)
-                                                          : formattedNow;
-
-                                                  Get.to(() =>
-                                                      BeliTiketWisataWidget(
-                                                        dataTiket:
-                                                            filteredTempatWisataItem,
-                                                        startDate:
-                                                            formattedStartDate,
-                                                      ));
-                                                },
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Expanded(
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10,
-                                                                        0,
-                                                                        10,
-                                                                        0),
-                                                            child: Text(
-                                                                getJsonField(
-                                                                  filteredTempatWisataItem,
-                                                                  r'''$.title''',
-                                                                ).toString(),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: regular16
-                                                                    .copyWith(
-                                                                        color:
-                                                                            white)),
-                                                          ),
-                                                        ),
-                                                      ],
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  10, 0, 10, 0),
+                                                      child: Text(
+                                                        'Kawah Ijen',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                      ),
                                                     ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.80, -0.90),
-                                                child: Container(
-                                                  width: 70,
-                                                  height: 20,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .accent4,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
                                                   ),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Icon(
-                                                        Icons
-                                                            .remove_red_eye_outlined,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        size: 11,
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    2, 0, 0, 0),
-                                                        child: Text(
-                                                            'Lihat Foto',
-                                                            style: regular10
-                                                                .copyWith(
-                                                                    color:
-                                                                        white)),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
+                                                ],
                                               ),
                                             ],
                                           ),
                                         ),
-                                      );
-                                    },
-                                  );
-                                },
-                              );
-                            },
-                          ),
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.8, -0.9),
+                                          child: Container(
+                                            width: 70,
+                                            height: 20,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.remove_red_eye_outlined,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  size: 11,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(2, 0, 0, 0),
+                                                  child: Text(
+                                                    'Lihat Foto',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          fontSize: 8,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 10, 0),
+                                  child: Container(
+                                    width: 160,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).accent1,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 4,
+                                          color: Color(0x33000000),
+                                          offset: Offset(0, 2),
+                                        )
+                                      ],
+                                      borderRadius: BorderRadius.circular(7),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(7),
+                                          child: Image.network(
+                                            'https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/2023/04/27/pbbwsxog8mvlstcol1rq-1543110654.jpeg',
+                                            width: double.infinity,
+                                            height: double.infinity,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(10, 0, 10, 0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Text(
+                                                      'Sungai Tamborasi',
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.8, -0.9),
+                                          child: Container(
+                                            width: 70,
+                                            height: 20,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.remove_red_eye_outlined,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  size: 11,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(2, 0, 0, 0),
+                                                  child: Text(
+                                                    'Lihat Foto',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          fontSize: 8,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 10, 0),
+                                  child: Container(
+                                    width: 160,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).accent1,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 4,
+                                          color: Color(0x33000000),
+                                          offset: Offset(0, 2),
+                                        )
+                                      ],
+                                      borderRadius: BorderRadius.circular(7),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(7),
+                                          child: Image.asset(
+                                            'assets/images/tipang_169.jpeg',
+                                            width: double.infinity,
+                                            height: double.infinity,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(10, 0, 10, 0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Text(
+                                                      'Danau Toba',
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.8, -0.9),
+                                          child: Container(
+                                            width: 70,
+                                            height: 20,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.remove_red_eye_outlined,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  size: 11,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(2, 0, 0, 0),
+                                                  child: Text(
+                                                    'Lihat Foto',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          fontSize: 8,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 10, 0),
+                                  child: Container(
+                                    width: 160,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(7),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.check_circle_outline,
+                                          color: Colors.black,
+                                          size: 24,
+                                        ),
+                                        Text(
+                                          'Akhir dari section',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodySmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
                         ],
+                        // children: [
+                        //   FutureBuilder<ApiCallResponse>(
+                        //     future: TiketWisataGroup.getTiketWisataCall.call(),
+                        //     builder: (context, snapshot) {
+                        //       // Customize what your widget looks like when it's loading.
+                        //       if (!snapshot.hasData) {
+                        //         return Center(
+                        //             child: SingleChildScrollView(
+                        //           scrollDirection: Axis.horizontal,
+                        //           child: Row(
+                        //             children: [
+                        //               loadingCard(),
+                        //               SizedBox(
+                        //                 width: 10,
+                        //               ),
+                        //               loadingCard(),
+                        //               SizedBox(
+                        //                 width: 10,
+                        //               ),
+                        //               loadingCard(),
+                        //               SizedBox(
+                        //                 width: 10,
+                        //               ),
+                        //               loadingCard(),
+                        //             ],
+                        //           ),
+                        //         ));
+                        //       }
+                        //       final listViewTourListResponse = snapshot.data!;
+                        //       return Builder(
+                        //         builder: (context) {
+                        //           final jsonBody =
+                        //               listViewTourListResponse.jsonBody;
+                        //           if (jsonBody == null) {
+                        //             // Handle the case when jsonBody is null (e.g., show an error message)
+                        //             return Center(
+                        //               child: Text("koneksi tidak stabil"),
+                        //             );
+                        //           }
+                        //           final tempatWisata =
+                        //               TiketWisataGroup.getTiketWisataCall
+                        //                       .dataTiket(
+                        //                         listViewTourListResponse
+                        //                             .jsonBody,
+                        //                       )
+                        //                       ?.toList() ??
+                        //                   [];
+                        //           final filteredTempatWisata =
+                        //               tempatWisata.where((item) {
+                        //             final price =
+                        //                 double.tryParse(item['price'] ?? "0");
+                        //             return price != null && price != 0.0;
+                        //           }).toList();
+                        //           return ListView.builder(
+                        //             padding: EdgeInsets.zero,
+                        //             primary: false,
+                        //             shrinkWrap: true,
+                        //             scrollDirection: Axis.horizontal,
+                        //             itemCount: filteredTempatWisata.length,
+                        //             itemBuilder:
+                        //                 (context, filteredTempatWisataIndex) {
+                        //               final filteredTempatWisataItem =
+                        //                   filteredTempatWisata[
+                        //                       filteredTempatWisataIndex];
+                        //               return Padding(
+                        //                 padding: EdgeInsetsDirectional.fromSTEB(
+                        //                     0, 0, 10, 0),
+                        //                 child: Container(
+                        //                   width: 160,
+                        //                   height: 100,
+                        //                   decoration: BoxDecoration(
+                        //                     color: FlutterFlowTheme.of(context)
+                        //                         .accent1,
+                        //                     boxShadow: [
+                        //                       BoxShadow(
+                        //                         blurRadius: 4,
+                        //                         color: Color(0x33000000),
+                        //                         offset: Offset(0, 2),
+                        //                       )
+                        //                     ],
+                        //                     borderRadius:
+                        //                         BorderRadius.circular(7),
+                        //                   ),
+                        //                   child: Stack(
+                        //                     children: [
+                        //                       ClipRRect(
+                        //                         borderRadius:
+                        //                             BorderRadius.circular(7),
+                        //                         child: Image.network(
+                        //                           getJsonField(
+                        //                             filteredTempatWisataItem,
+                        //                             r'''$.banner''',
+                        //                           )["400x350"],
+                        //                           width: double.infinity,
+                        //                           height: double.infinity,
+                        //                           fit: BoxFit.cover,
+                        //                         ),
+                        //                       ),
+                        //                       InkWell(
+                        //                         onTap: () async {
+                        //                           DateTime? startDate =
+                        //                               FFAppState().startDate;
+
+                        //                           String formattedStartDate =
+                        //                               startDate != null
+                        //                                   ? DateFormat(
+                        //                                           'yyyy-MM-dd')
+                        //                                       .format(startDate)
+                        //                                   : formattedNow;
+
+                        //                           Get.to(() =>
+                        //                               BeliTiketWisataWidget(
+                        //                                 dataTiket:
+                        //                                     filteredTempatWisataItem,
+                        //                                 startDate:
+                        //                                     formattedStartDate,
+                        //                               ));
+                        //                         },
+                        //                         child: Column(
+                        //                           mainAxisSize:
+                        //                               MainAxisSize.max,
+                        //                           mainAxisAlignment:
+                        //                               MainAxisAlignment.center,
+                        //                           children: [
+                        //                             Row(
+                        //                               mainAxisSize:
+                        //                                   MainAxisSize.max,
+                        //                               mainAxisAlignment:
+                        //                                   MainAxisAlignment
+                        //                                       .center,
+                        //                               children: [
+                        //                                 Expanded(
+                        //                                   child: Padding(
+                        //                                     padding:
+                        //                                         EdgeInsetsDirectional
+                        //                                             .fromSTEB(
+                        //                                                 10,
+                        //                                                 0,
+                        //                                                 10,
+                        //                                                 0),
+                        //                                     child: Text(
+                        //                                         getJsonField(
+                        //                                           filteredTempatWisataItem,
+                        //                                           r'''$.title''',
+                        //                                         ).toString(),
+                        //                                         textAlign:
+                        //                                             TextAlign
+                        //                                                 .center,
+                        //                                         style: regular16
+                        //                                             .copyWith(
+                        //                                                 color:
+                        //                                                     white)),
+                        //                                   ),
+                        //                                 ),
+                        //                               ],
+                        //                             ),
+                        //                           ],
+                        //                         ),
+                        //                       ),
+                        //                       Align(
+                        //                         alignment: AlignmentDirectional(
+                        //                             0.80, -0.90),
+                        //                         child: Container(
+                        //                           width: 70,
+                        //                           height: 20,
+                        //                           decoration: BoxDecoration(
+                        //                             color: FlutterFlowTheme.of(
+                        //                                     context)
+                        //                                 .accent4,
+                        //                             borderRadius:
+                        //                                 BorderRadius.circular(
+                        //                                     30),
+                        //                           ),
+                        //                           child: Row(
+                        //                             mainAxisSize:
+                        //                                 MainAxisSize.max,
+                        //                             mainAxisAlignment:
+                        //                                 MainAxisAlignment
+                        //                                     .center,
+                        //                             children: [
+                        //                               Icon(
+                        //                                 Icons
+                        //                                     .remove_red_eye_outlined,
+                        //                                 color: FlutterFlowTheme
+                        //                                         .of(context)
+                        //                                     .primaryBackground,
+                        //                                 size: 11,
+                        //                               ),
+                        //                               Padding(
+                        //                                 padding:
+                        //                                     EdgeInsetsDirectional
+                        //                                         .fromSTEB(
+                        //                                             2, 0, 0, 0),
+                        //                                 child: Text(
+                        //                                     'Lihat Foto',
+                        //                                     style: regular10
+                        //                                         .copyWith(
+                        //                                             color:
+                        //                                                 white)),
+                        //                               ),
+                        //                             ],
+                        //                           ),
+                        //                         ),
+                        //                       ),
+                        //                     ],
+                        //                   ),
+                        //                 ),
+                        //               );
+                        //             },
+                        //           );
+                        //         },
+                        //       );
+                        //     },
+                        //   ),
+                        // ],
                       ),
                     ),
                   ),
