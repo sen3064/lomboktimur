@@ -10,7 +10,7 @@ export 'api_manager.dart' show ApiCallResponse;
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class ChatGroup {
-  static String baseUrl = 'https://chat.kelotimaja.kabtour.com/';
+  static String baseUrl = 'https://chat.kabtour.com/';
   static Map<String, String> headers = {};
   static ChatCall chatCall = ChatCall();
 }
@@ -53,7 +53,7 @@ class ChatCall {
 /// Start User Group Code
 
 class UserGroup {
-  static String baseUrl = 'https://user-api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://user-api.kabtour.com/v2';
   static Map<String, String> headers = {};
   static UserLoginCall userLoginCall = UserLoginCall();
   static UserForgotCall userForgotCall = UserForgotCall();
@@ -294,6 +294,7 @@ class UserRegisterCall {
     String? phone = '',
     String? password = '',
     String? roleId = '',
+    String? kabupatenId = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'User Register',
@@ -310,6 +311,7 @@ class UserRegisterCall {
         'phone': phone,
         'password': password,
         'role_id': roleId,
+        'kabupaten_id': kabupatenId,
       },
       bodyType: BodyType.MULTIPART,
       returnBody: true,
@@ -578,7 +580,7 @@ class UserAddressDeleteCall {
 /// Start Homestay Group Code
 
 class HomestayGroup {
-  static String baseUrl = 'https://hotel-api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://hotel-api.lotim.kabtour.com/v2';
   static Map<String, String> headers = {};
   static HomestayListCall homestayListCall = HomestayListCall();
   static HomestaySearchCall homestaySearchCall = HomestaySearchCall();
@@ -911,7 +913,7 @@ class HomestaySearchCall {
 
 /// Start Rent Group Code
 class RentGroup {
-  static String baseUrl = 'https://rent-api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://rent-api.lotim.kabtour.com/v2';
   static Map<String, String> headers = {};
   static RentListCall rentListCall = RentListCall();
 }
@@ -948,7 +950,7 @@ class RentListCall {
 /// Start Tour Group Code
 
 class EventGroup {
-  static String baseUrl = 'https://tour-api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://tour-api.lotim.kabtour.com/v2';
   static Map<String, String> headers = {};
   static EventListCall eventListCall = EventListCall();
 }
@@ -995,7 +997,7 @@ class EventListCall {
 /// Start Api Helper Group Code
 
 class ApiHelperGroup {
-  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://api.lotim.kabtour.com/v2';
   static Map<String, String> headers = {};
   static GetReviewHandlerCall getReviewHandlerCall = GetReviewHandlerCall();
   static ApiLocationCall apiLocationCall = ApiLocationCall();
@@ -1008,12 +1010,13 @@ class GetReviewHandlerCall {
   Future<ApiCallResponse> call({
     String? objectId = '',
     String? objectModel = '',
+    String? appId = '',
     // String? accessToken = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'Api Homestay Review',
       apiUrl:
-          '${ApiHelperGroup.baseUrl}/review?object_model=${objectModel}&object_id=${objectId}',
+          '${ApiHelperGroup.baseUrl}/review?object_model=${objectModel}&object_id=${objectId}&app_id=${appId}',
       callType: ApiCallType.GET,
       headers: {
         ...ApiHelperGroup.headers,
@@ -1073,6 +1076,7 @@ class AddReviewHandlerCall {
     String? content = '',
     String? rateNumber = '',
     String? vendorId = '',
+    String? appId = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'Add Review handler',
@@ -1090,6 +1094,7 @@ class AddReviewHandlerCall {
         'content': content,
         'rate_number': rateNumber,
         'vendor_id': vendorId,
+        'app_id': appId,
       },
       bodyType: BodyType.MULTIPART,
       returnBody: true,
@@ -1133,7 +1138,7 @@ class UpdateReviewHandlerCall {
 /// Start API Search
 
 class SearchKeyGroup {
-  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://api.lotim.kabtour.com/v2';
   static Map<String, String> headers = {};
   static ListAllProdukCall listAllProdukCall = ListAllProdukCall();
 }
@@ -1165,7 +1170,7 @@ class ListAllProdukCall {
 /// Start UMKM Group Code
 
 class UmkmGroup {
-  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://api.lotim.kabtour.com/v2';
   static Map<String, String> headers = {};
   static ListProdukUMKMCall listProdukUMKMCall = ListProdukUMKMCall();
   static LokasiProdukUMKMCall lokasiProdukUMKMCall = LokasiProdukUMKMCall();
@@ -1281,7 +1286,7 @@ class FilterKategoriCall {
 /// Start Makanan minuman Group Code
 
 class MakananMinumanGroup {
-  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://api.lotim.kabtour.com/v2';
   static Map<String, String> headers = {};
   static GetMakananCall getMakananCall = GetMakananCall();
   static ListMakananCall listMakananCall = ListMakananCall();
@@ -1424,7 +1429,7 @@ class FilterPaketCall {
 /// Start Tiket Group
 
 class TiketWisataGroup {
-  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://api.lotim.kabtour.com/v2';
   static Map<String, String> headers = {};
   static GetTiketWisataCall getTiketWisataCall = GetTiketWisataCall();
   static FilterTiketWisataCall filterTiketWisataCall = FilterTiketWisataCall();
@@ -1529,7 +1534,7 @@ class BeliTiketWisataCall {
 ///
 
 class TentangKabupatenGroup {
-  static String baseUrl = 'https://api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://api.kabtour.com/public/v2';
   static Map<String, String> headers = {};
   static TentangKabCall tentangKabCall = TentangKabCall();
 }
@@ -1538,7 +1543,7 @@ class TentangKabCall {
   Future<ApiCallResponse> call() {
     return ApiManager.instance.makeApiCall(
       callName: 'Tentang Kabupaten',
-      apiUrl: '${TentangKabupatenGroup.baseUrl}/about-kabupaten',
+      apiUrl: '${TentangKabupatenGroup.baseUrl}/location/kabupaten-lombok-timur',
       callType: ApiCallType.GET,
       headers: {
         ...TentangKabupatenGroup.headers,
@@ -1555,7 +1560,7 @@ class TentangKabCall {
 /// Start Booking Handler Group Code
 
 class BookingHandlerGroup {
-  static String baseUrl = 'https://booking-api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://booking-api.lotim.kabtour.com/v2';
   static Map<String, String> headers = {};
   static HomestayCall homestayCall = HomestayCall();
   static TransaksiCall transaksiCall = TransaksiCall();
@@ -1983,7 +1988,7 @@ class PaymentMakananMinumanUMKMCall {
 /// Start Payment Gateway Group Code
 
 class PaymentGatewayGroup {
-  static String baseUrl = 'https://pg-api.kelotimaja.kabtour.com/v2';
+  static String baseUrl = 'https://pg.kabtour.com/v2';
   static Map<String, String> headers = {};
   static ApiPaymentCall apiPaymentCall = ApiPaymentCall();
 }

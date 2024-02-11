@@ -56,7 +56,7 @@
                 <data android:scheme="http" />
                 <data android:scheme="https" />
 
-                <data android:host="*.kelotimaja.kabtour.com" />
+                <data android:host="*.lotim.kabtour.com" />
             </intent-filter>
 
         </activity>

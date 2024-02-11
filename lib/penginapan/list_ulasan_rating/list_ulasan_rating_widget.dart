@@ -257,7 +257,7 @@ class _ListUlasanRatingWidgetState extends State<ListUlasanRatingWidget> {
                                                       child: Image.network(
                                                         getJsonField(
                                                             listViewItem,
-                                                            r'''$.user.avatar'''),
+                                                            r'''$.user.avatar''') ?? 'http://www.pngall.com/wp-content/uploads/5/Profile-PNG-Photo.png',
                                                         width: 300,
                                                         height: 200,
                                                         fit: BoxFit.cover,
@@ -266,13 +266,7 @@ class _ListUlasanRatingWidgetState extends State<ListUlasanRatingWidget> {
                                                   ),
                                                 ),
                                                 Text(
-                                                  '${getJsonField(
-                                                    listViewItem,
-                                                    r'''$.user.first_name''',
-                                                  ).toString()} ${getJsonField(
-                                                    listViewItem,
-                                                    r'''$.user.last_name''',
-                                                  ).toString()}',
+                                                  '${getJsonField(listViewItem, r'''$.user.first_name''') != null ? getJsonField(listViewItem, r'''$.user.first_name''').toString() : 'Unknown'} ${getJsonField(listViewItem, r'''$.user.last_name''') != null ? getJsonField(listViewItem, r'''$.user.last_name''').toString() : 'User'}',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyLarge
