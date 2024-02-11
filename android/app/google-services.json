@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "271775582686-fsqtmij420q6njau4qtp6he625vbv74a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kabtour.kelotimaja",
+            "certificate_hash": "63bde73f95fcd61093a15dd00156264ef0f0f415"
+          }
+        },
+        {
           "client_id": "271775582686-hqjfe3530jqqdmetf4k10sq9jprbt4gv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
