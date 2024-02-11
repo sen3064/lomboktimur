@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "271775582686",
+    "project_id": "kelotimaja-14fb3",
+    "storage_bucket": "kelotimaja-14fb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271775582686:android:7b683d7960fd04c4f4f54f",
+        "android_client_info": {
+          "package_name": "com.kabtour.kelotimaja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271775582686-hqjfe3530jqqdmetf4k10sq9jprbt4gv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kabtour.kelotimaja",
+            "certificate_hash": "278151ae436d469be15abbeec4d79b26936257ec"
+          }
+        },
+        {
+          "client_id": "271775582686-hub3k5si7c62knh18gvunujb8ie6alfp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCijBw0iv7mCBM-Hqu5I44C71jkAg6xzvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271775582686-hub3k5si7c62knh18gvunujb8ie6alfp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
