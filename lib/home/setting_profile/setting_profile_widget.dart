@@ -816,7 +816,7 @@ class _SettingProfileWidgetState extends State<SettingProfileWidget> {
                                                             .fromSTEB(
                                                                 12, 0, 0, 0),
                                                     child: Text(
-                                                      '1.0.17',
+                                                      '1.0.1',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
