@@ -73,13 +73,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       if (currentUser != null) {
         // Jika login berhasil, kirim data ke API
         var response = await http.post(
-          Uri.parse("https://user-api.kelotimaja.kabtour.com/v2/login-google"),
+          Uri.parse("https://user-api.kabtour.com/v2/login-google"),
           body: {
             'email': currentUser.email,
             'name': currentUser.displayName,
             'social_id': currentUser.id,
             'avatar': currentUser.photoUrl,
             'role_id': '2',
+            'kabupaten_id': '3'
           },
         );
 
@@ -124,7 +125,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
             };
             print('Param kirim: $params');
             chatAccount = await apiClient.post(
-                'https://chat.kelotimaja.kabtour.com/api_request/',
+                'https://chat.kabtour.com/api_request/',
                 data: params);
             print('akun chat: $chatAccount');
             chatAccount = jsonDecode(chatAccount['body']);
@@ -479,7 +480,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   };
                                   // print('Param kirim: $params');
                                   chatAccount = await apiClient.post(
-                                      'https://chat.kelotimaja.kabtour.com/api_request/',
+                                      'https://chat.kabtour.com/api_request/',
                                       data: params);
                                   // print('akun chat: $chatAccount');
                                   chatAccount = jsonDecode(chatAccount['body']);

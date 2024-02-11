@@ -436,7 +436,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   //   },
                   // );
                   List<String> scanned = scannedValue.split('/');
-                  if (scanned[2] == 'm.kelotimaja.kabtour.com') {
+                  if (scanned[2] == 'm.lotim.kabtour.com') {
                     if (FFAppState().accessToken.isNotEmpty) {
                       List<String> paramData = scanned[3].split('=');
                       String tiketId = paramData[1];

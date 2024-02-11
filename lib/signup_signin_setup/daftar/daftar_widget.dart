@@ -70,13 +70,14 @@ class _DaftarWidgetState extends State<DaftarWidget> {
       if (googleSignInAccount != null) {
         // Jika login berhasil, kirim data ke API
         var response = await http.post(
-          Uri.parse("https://user-api.kelotimaja.kabtour.com/v2/login-google"),
+          Uri.parse("https://user-api.kabtour.com/v2/login-google"),
           body: {
             'email': googleSignInAccount.email,
             'name': googleSignInAccount.displayName,
             'social_id': googleSignInAccount.id,
             'avatar': googleSignInAccount.photoUrl,
             'role_id': '2',
+            'kabupaten_id': '3'
           },
         );
 
@@ -115,7 +116,7 @@ class _DaftarWidgetState extends State<DaftarWidget> {
             };
             print('Param kirim: $params');
             chatAccount = await apiClient.post(
-                'https://chat.kelotimaja.kabtour.com/api_request/',
+                'https://chat.kabtour.com/api_request/',
                 data: params);
             print('akun chat: $chatAccount');
             chatAccount = jsonDecode(chatAccount['body']);
@@ -705,6 +706,7 @@ class _DaftarWidgetState extends State<DaftarWidget> {
                                 phone: _model.phoneNumberController.text,
                                 password: _model.passwordController.text,
                                 roleId: '2',
+                                kabupatenId: '3'
                               );
                               if ((_model.apiResultu52?.succeeded ?? true)) {
                                 if (getJsonField(
@@ -759,7 +761,7 @@ class _DaftarWidgetState extends State<DaftarWidget> {
                                     };
                                     // print('Param kirim: $params');
                                     chatAccount = await apiClient.post(
-                                        'https://chat.kelotimaja.kabtour.com/api_request/',
+                                        'https://chat.kabtour.com/api_request/',
                                         data: params);
                                     // print('akun chat: $chatAccount');
                                     chatAccount =
