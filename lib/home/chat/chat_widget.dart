@@ -37,6 +37,7 @@ class _ChatWidgetState extends State<ChatWidget> {
   late final WebViewController wvc;
   double wheight = Get.height;
   Map<String, dynamic> chatAccount = FFAppState().userDataChat;
+  bool isRedirect = false;
 
   @override
   void initState() {
@@ -44,7 +45,8 @@ class _ChatWidgetState extends State<ChatWidget> {
     super.initState();
     // _model = createModel(context, () => ChatModel());
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().userData.isEmpty) {
+      // if (FFAppState().userData.isEmpty) {
+        if(FFAppState().userData == null){
         // print(userStorage.read('chat_account'));
         // await Navigator.push(
         //   context,
@@ -55,6 +57,7 @@ class _ChatWidgetState extends State<ChatWidget> {
         await Get.to(() => LoginPageWidget(), arguments: 'chat');
       }
     });
+    isRedirect = Get.arguments != null ? true : false;
     wheight = Get.arguments != null ? Get.height : Get.height - 125;
     chatAccount = FFAppState().userDataChat;
     print('chat account : $chatAccount');
@@ -84,6 +87,14 @@ class _ChatWidgetState extends State<ChatWidget> {
           },
           onPageFinished: (String url) {
             debugPrint('Page finished loading: $url');
+            if(isRedirect){
+              print('chat asw');
+              isRedirect=false;
+              // wvc.runJavaScript('''
+              //   window.location.replace("https://chat.kabtour.com/${Get.arguments["to_username"]}/chat");
+              // ''');
+              wvc.loadRequest(Uri.parse("https://chat.kabtour.com/${Get.arguments["to_username"]}/chat"));
+            }
             wvc.runJavaScript('''
                 let pms = document.getElementsByClassName("pm_shortcut");
                 let pv = document.getElementsByClassName("load_private_conversations");
@@ -126,10 +137,7 @@ class _ChatWidgetState extends State<ChatWidget> {
           );
         },
       )
-      ..loadRequest(Get.arguments != null
-          ? Uri.parse(
-              "https://chat.kelotimaja.kabtour.com/${Get.arguments["to_username"]}/chat")
-          : Uri.parse(chatAccount['auto_login_url']));
+      ..loadRequest(Uri.parse(chatAccount['auto_login_url']));
     // #docregion platform_features
     if (controller.platform is AndroidWebViewController) {
       AndroidWebViewController.enableDebugging(true);
@@ -212,7 +220,7 @@ class _ChatWidgetState extends State<ChatWidget> {
       child: Scaffold(
         // resizeToAvoidBottomInset: false,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: const ReusableAppBar(title: 'Chats'),
+        appBar: ReusableAppBar(title: 'Chats', onBack: () => Get.back(),),
         body: SafeArea(
           top: true,
           child: SizedBox(
@@ -230,8 +238,8 @@ class _ChatWidgetState extends State<ChatWidget> {
     String? currentUrl = await wvc.currentUrl();
     print('current url : $currentUrl');
     print(await wvc.canGoBack());
-    if (currentUrl == 'https://chat.kelotimaja.kabtour.com/#' ||
-        currentUrl == 'https://chat.kelotimaja.kabtour.com') {
+    if (currentUrl == 'https://chat.kabtour.com/#' ||
+        currentUrl == 'https://chat.kabtour.com') {
       Get.off(() => NavBarPage(
             initialPage: 'Home_Page',
           ));

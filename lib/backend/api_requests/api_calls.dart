@@ -1010,7 +1010,7 @@ class GetReviewHandlerCall {
   Future<ApiCallResponse> call({
     String? objectId = '',
     String? objectModel = '',
-    String? appId = '',
+    String? appId = '3',
     // String? accessToken = '',
   }) {
     return ApiManager.instance.makeApiCall(
@@ -1076,7 +1076,7 @@ class AddReviewHandlerCall {
     String? content = '',
     String? rateNumber = '',
     String? vendorId = '',
-    String? appId = '',
+    String? appId = '3',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'Add Review handler',
